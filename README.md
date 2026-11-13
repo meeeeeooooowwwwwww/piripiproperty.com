@@ -4,10 +4,11 @@ A responsive coming-soon site for the Piripi & Sons Real Estate brand at [piripi
 
 ## Site
 
-- `public/index.html`: responsive, no-scroll full-screen page, with the original team photograph fully visible (no crop) and responsive radial-gradient vignette
+- `public/index.html`: accessible split-layout homepage, preserving Corrie's complete original photograph on the left (no crop or vignette) and a property enquiry card on the right; stacks on smaller screens
 - `public/assets/piripi-and-sons-real-estate.jpg`: Corrie’s supplied team photograph with PIRIPI & SONS REAL ESTATE branding
 - The earlier crayon artwork is kept in the repository solely for rollback, and is no longer shown on the site
-- `public/assets/site.css`: shared black/gold/silver design system and responsive vignette
+- `public/assets/site.css`: shared black/gold/silver design system, responsive split-layout homepage and contact-page styles
+- `public/assets/enquiry-form.js`: progressively enhanced `mailto:` form. Visitors must complete sending in their email application; no website-side delivery, storage, or claim of successful submission.
 - `public/assets/brand/*`: original vector monogram tracing plus stacked/horizontal brand lockups
 - `public/favicon.svg`, `public/favicon.ico`, `public/favicon-32.png`, `public/apple-touch-icon.png`: matching logo-based favicon and touch-icon set
 - `public/site.webmanifest`: web app identity/colour tokens
@@ -60,7 +61,7 @@ and choose **Scrape Again** for https://piripiproperty.com/ .
 
 ## Initial public pages
 
-- `/`: fixed coming-soon landing page, with unobtrusive links to Contact and Sitemap.
+- `/`: branded home with uncropped team photograph and right-side enquiry form on desktop; the form is below the photograph on mobile. Email delivery currently occurs through the visitor's own email application (not a server-side submission).
 - `/contact/`: Corrie Piripi's phone and business email, including `tel:` and `mailto:` links.
 - `/sitemap/`: readable navigation to Home and Contact.
 - `/sitemap.xml`: machine-readable sitemap with all three public URLs.
