@@ -1,6 +1,6 @@
-# Piripi Property
+# Piripi & Sons Real Estate
 
-A simple, fixed, single-screen coming-soon website for [piripiproperty.com](https://piripiproperty.com).
+A responsive coming-soon site for the Piripi & Sons Real Estate brand at [piripiproperty.com](https://piripiproperty.com).
 
 ## Site
 
@@ -65,4 +65,4 @@ and choose **Scrape Again** for https://piripiproperty.com/ .
 - `/sitemap/`: readable navigation to Home and Contact.
 - `/sitemap.xml`: machine-readable sitemap with all three public URLs.
 
-These pages use the same Google tag and social-preview image as the homepage. The name `Piripi Property Limited` is deliberately excluded while registration is pending.
+These pages use the same Google tag and social-preview image as the homepage. Public SEO and structured data use the supplied brand **Piripi & Sons Real Estate** and name Corrie Piripi as a licensed real estate professional. `piripiproperty.com` remains the canonical domain. There is no assertion of a verified legal company name, independent agency/brokerage status, licence number or registered office. Add verified supervising agency and legal particulars once supplied by Corrie.

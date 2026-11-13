@@ -46,6 +46,25 @@ jobs:
           grep -q 'og:image' public/index.html
           grep -q 'Corrie Piripi' public/index.html
           grep -q 'application/ld+json' public/index.html
+          grep -Fq '<meta property="og:site_name" content="Piripi &amp; Sons Real Estate">' public/index.html
+          for page in public/index.html public/contact/index.html public/sitemap/index.html; do
+            grep -Fq 'Piripi &amp; Sons Real Estate' "$page"
+            ! grep -Fq 'Piripi Property Limited' "$page"
+            ! grep -Fq 'registration pending' "$page"
+            grep -Fq 'https://piripiproperty.com/social-preview.jpg?v=' "$page"
+          done
+          python - <<'PY'
+          import json
+          import pathlib
+          import re
+          for path in pathlib.Path("public").rglob("index.html"):
+              doc = path.read_text()
+              match = re.search(r'<script type="application/ld\+json">([^<]+)</script>', doc)
+              assert match, f"Missing JSON-LD: {path}"
+              graph = json.loads(match.group(1))["@graph"]
+              assert any(item.get("@type") == "Brand" and item.get("name") == "Piripi & Sons Real Estate" for item in graph), f"Wrong brand schema: {path}"
+              assert any(item.get("@type") == "Person" and item.get("name") == "Corrie Piripi" for item in graph), f"Person absent: {path}"
+          PY
           ! grep -q 'noindex' public/index.html
           test -s public/robots.txt
           test -s public/sitemap.xml
