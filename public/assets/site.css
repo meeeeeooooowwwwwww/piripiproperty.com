@@ -117,8 +117,24 @@ h1 strong {font-weight:600}
   content:"";position:absolute;inset:9px;pointer-events:none;
   border:1px solid rgba(216,168,73,.085);border-radius:5px;
 }
-.contact-page h1 {letter-spacing:-.045em;margin-bottom:8px}
-.contact-page h1 strong {font-weight:650}
+.contact-page h1 {
+  margin:8px 0 8px;
+  line-height:1.2;
+}
+.contact-page h1 strong {
+  display:inline-block;
+  font-family:"Alex Brush","Brush Script MT",cursive;
+  font-weight:400;
+  font-size:clamp(3.2rem,7.1vw,5rem);
+  line-height:1.23;
+  letter-spacing:.005em;
+  color:#ecd09a;
+  background:linear-gradient(115deg,#f6e1b5 4%,#dfb75e 52%,#c6cbd0 100%);
+  -webkit-background-clip:text;
+  background-clip:text;
+  -webkit-text-fill-color:transparent;
+  filter:drop-shadow(0 3px 12px rgba(216,168,73,.16));
+}
 .contact-page .intro {
   margin:0 0 clamp(20px,3vh,28px);
   color:var(--silver);font-size:.87rem;font-weight:500;
