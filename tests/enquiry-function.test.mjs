@@ -5,7 +5,7 @@ import { readFile } from "node:fs/promises";
 const source = await readFile(new URL("../functions/api/enquiry.js", import.meta.url), "utf8");
 const { onRequestPost } = await import("data:text/javascript," + encodeURIComponent(source));
 const base = {
-  name: "Jane Buyer", email: "jane@example.com", interest: "Buying a property",
+  name: "Jane Buyer", email: "jane@example.com", phone: "+64 21 234 5678", interest: "Buying a property",
   message: "Hello Corrie", company_website: "", openedAt: Date.now() - 5000
 };
 function req(payload = base, origin = "https://piripiproperty.com") {
@@ -40,6 +40,7 @@ test("valid inquiry routes privately to temporary owner inbox via Brevo", async 
     assert.equal((await response.json()).ok, true);
     assert.equal(sent.to[0].email,"david@americafirst.co.nz");
     assert.equal(sent.replyTo.email,base.email);
+    assert.ok(sent.textContent.includes("Phone: +64 21 234 5678"));
   } finally { globalThis.fetch = originalFetch; }
 });
 test("private recipient overrides fallback without appearing in static source", async () => {
@@ -55,4 +56,23 @@ test("private recipient overrides fallback without appearing in static source", 
     assert.equal(sent.to[0].email,"private-recipient@example.net");
     assert.equal(source.includes("private-recipient@example.net"),false);
   } finally { globalThis.fetch = originalFetch; }
+});
+
+test("rejects missing mandatory phone number", async () => {
+  const response = await onRequestPost({request:req({...base,phone:""}),env:{BREVO_API_KEY:"private-test-value"}});
+  assert.equal(response.status,400);
+  assert.equal((await response.json()).ok,false);
+});
+test("rejects missing mandatory message", async () => {
+  const response = await onRequestPost({request:req({...base,message:"  "}),env:{BREVO_API_KEY:"private-test-value"}});
+  assert.equal(response.status,400);
+  assert.equal((await response.json()).ok,false);
+});
+test("rejects an invalid telephone number", async () => {
+  const response = await onRequestPost({request:req({...base,phone:"HELLO-123"}),env:{BREVO_API_KEY:"private-test-value"}});
+  assert.equal(response.status,400);
+});
+test("rejects an unselected interest", async () => {
+  const response = await onRequestPost({request:req({...base,interest:""}),env:{BREVO_API_KEY:"private-test-value"}});
+  assert.equal(response.status,400);
 });

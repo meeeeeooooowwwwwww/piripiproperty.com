@@ -9,21 +9,18 @@
   const note = form.querySelector(".enquiry-form__note");
   const openedAt = Date.now();
   let directReady = false;
-
-  // Stay usable while the server-side email credential is being provisioned.
+  const setDeliveryMode = (ready) => {
+    directReady = Boolean(ready);
+    button.firstChild.textContent = directReady ? "Send enquiry " : "Prepare enquiry email ";
+    if (note) note.textContent = directReady
+      ? "Your details are sent privately to Corrie's enquiries inbox."
+      : "This opens your email application. Please press Send there to complete your enquiry.";
+  };
+  setDeliveryMode(false);
   fetch("/api/enquiry", { cache: "no-store", credentials: "same-origin" })
     .then(async (response) => response.ok ? await response.json() : null)
-    .then((result) => {
-      directReady = Boolean(result && result.ready);
-      if (!directReady) {
-        button.firstChild.textContent = "Prepare enquiry email ";
-        if (note) note.textContent = "This opens your email application. Please press Send there to complete your enquiry.";
-      }
-    })
-    .catch(() => {
-      button.firstChild.textContent = "Prepare enquiry email ";
-      if (note) note.textContent = "This opens your email application. Please press Send there to complete your enquiry.";
-    });
+    .then((result) => setDeliveryMode(Boolean(result && result.ready)))
+    .catch(() => setDeliveryMode(false));
 
   function prepareEmail(payload) {
     const body = [
@@ -31,6 +28,7 @@
       "",
       "Name: " + payload.name,
       "Email: " + payload.email,
+      "Phone: " + payload.phone,
       "Interest: " + payload.interest,
       "Message: " + (payload.message || "(not provided)")
     ].join("\n");
@@ -48,6 +46,7 @@
     const payload = {
       name: String(data.get("name") || "").trim(),
       email: String(data.get("email") || "").trim(),
+      phone: String(data.get("phone") || "").trim(),
       interest: String(data.get("interest") || ""),
       message: String(data.get("message") || "").trim(),
       company_website: String(data.get("company_website") || ""),

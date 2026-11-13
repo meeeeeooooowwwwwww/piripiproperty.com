@@ -86,9 +86,16 @@ jobs:
           test -s public/apple-touch-icon.png
           test -s public/site.webmanifest
           ! grep -Fq 'mask-image:' public/assets/site.css
-          grep -Fq 'grid-template-columns:minmax(0,1fr) minmax(320px,370px)' public/assets/site.css
+          grep -Fq 'grid-template-columns:minmax(0,1.72fr) minmax(324px,.98fr)' public/assets/site.css
+          grep -Fq 'align-items:stretch' public/assets/site.css
+          grep -Fq 'object-fit:contain' public/assets/site.css
+          grep -Fq '@media (max-width:840px)' public/assets/site.css
           grep -Fq 'class="hero__layout"' public/index.html
           grep -Fq 'id="property-enquiry-form"' public/index.html
+          grep -Fq 'id="enquiry-phone" name="phone" type="tel"' public/index.html
+          grep -Fq 'id="enquiry-message" name="message" rows="3" maxlength="1500"' public/index.html
+          grep -Fq 'name="phone"' public/index.html
+          grep -Fq '"Phone: " + phone' functions/api/enquiry.js
           grep -Fq 'action="/api/enquiry"' public/index.html
           test -s functions/api/enquiry.js
           grep -Fq 'api.brevo.com/v3/smtp/email' functions/api/enquiry.js
@@ -105,7 +112,7 @@ jobs:
           grep -Fq 'class="site-header"' public/index.html
           grep -Fq 'class="site-header"' public/contact/index.html
           grep -Fq 'class="site-header"' public/sitemap/index.html
-          grep -Fq 'href="/assets/site.css?v=20261113-property-enquiry"' public/index.html
+          grep -Fq 'href="/assets/site.css?v=20261113-aligned-enquiry"' public/index.html
           grep -Fq 'class="inner-page contact-page"' public/contact/index.html
           grep -Fq 'body.contact-page {height:100dvh;min-height:0;overflow:hidden}' public/assets/site.css
           for page in public/index.html public/contact/index.html public/sitemap/index.html; do
@@ -113,7 +120,7 @@ jobs:
             ! sed -n '/<header class="site-header">/,/<\/header>/p' "$page" | grep -Fq '/sitemap/'
           done
           grep -Fq 'href="tel:+64221748354"' public/index.html
-          grep -Fq 'src="/assets/enquiry-form.js?v=20261113-direct-send"' public/index.html
+          grep -Fq 'src="/assets/enquiry-form.js?v=20261113-aligned-enquiry"' public/index.html
           grep -Fq "connect-src 'self'" public/_headers
           ! grep -q 'href="tel:' public/sitemap/index.html
           ! grep -q 'href="mailto:' public/sitemap/index.html
@@ -133,6 +140,31 @@ jobs:
             echo 'available=false' >> "$GITHUB_OUTPUT"
             echo "::notice::This repository needs the PIRIPIPROPERTY_CLOUDFLARE_API_TOKEN secret to activate automatic deploys."
           fi
+
+      - name: Check whether this repository can access a Brevo secret
+        id: email_auth
+        shell: bash
+        env:
+          BREVO_API_KEY: ${{ secrets.BREVO_API_KEY }}
+        run: |
+          if [ -n "${BREVO_API_KEY:-}" ]; then
+            echo 'available=true' >> "$GITHUB_OUTPUT"
+            echo "Brevo GitHub secret is available to this Piripi Property workflow."
+          else
+            echo 'available=false' >> "$GITHUB_OUTPUT"
+            echo "::notice::BREVO_API_KEY is not available to this repository. The form will use its explicit email-app fallback unless a key is already configured in Cloudflare Pages."
+          fi
+
+      - name: Sync available GitHub Brevo secret to this Pages project
+        if: steps.auth.outputs.available == 'true' && steps.email_auth.outputs.available == 'true'
+        shell: bash
+        continue-on-error: true
+        env:
+          BREVO_API_KEY: ${{ secrets.BREVO_API_KEY }}
+        run: |
+          set -euo pipefail
+          printf '%s' "$BREVO_API_KEY" | npx --yes wrangler@4 pages secret put BREVO_API_KEY --project-name=piripiproperty
+          echo "Brevo secret was transferred securely to Piripi Property Pages."
 
       - name: Deploy only the piripiproperty Pages project
         if: steps.auth.outputs.available == 'true'

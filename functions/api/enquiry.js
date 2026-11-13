@@ -31,11 +31,15 @@ export async function onRequestPost({ request, env }) {
   if (clean(payload.company_website, 500)) return json({ ok: true }); // honeypot: do not transmit
   const name = clean(payload.name, 100);
   const email = clean(payload.email, 254);
+  const phone = clean(payload.phone, 30);
   const interest = clean(payload.interest, 50);
   const message = clean(payload.message || "", 1500);
   const elapsed = Date.now() - Number(payload.openedAt);
-  if (!name || name.length > 100 || !emailOk(email) || !interests.has(interest) ||
-      message.length > 1500 || !Number.isFinite(elapsed) || elapsed < 2000 || elapsed > 86400000) {
+  const digits = phone.replace(/\D/g, "");
+  if (!name || name.length > 100 || !emailOk(email) ||
+      !/^\+?[0-9 ()-]{7,30}$/.test(phone) || digits.length < 7 ||
+      !interests.has(interest) || !message || message.length > 1500 ||
+      !Number.isFinite(elapsed) || elapsed < 2000 || elapsed > 86400000) {
     return json({ ok: false, error: "Please check your details" }, 400);
   }
   const apiKey = typeof env.BREVO_API_KEY === "string" ? env.BREVO_API_KEY.trim() : "";
@@ -56,6 +60,7 @@ export async function onRequestPost({ request, env }) {
       "",
       "Name: " + name,
       "Email: " + email,
+      "Phone: " + phone,
       "Interest: " + interest,
       "",
       "Message:",

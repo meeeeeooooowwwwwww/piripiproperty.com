@@ -4,7 +4,7 @@ A responsive coming-soon site for the Piripi & Sons Real Estate brand at [piripi
 
 ## Site
 
-- `public/index.html`: accessible split-layout homepage, preserving Corrie's complete original photograph on the left (no crop or vignette) and a property enquiry card on the right; stacks on smaller screens
+- `public/index.html`: desktop image and enquiry form use equal-height columns, with the original photograph fully visible (no crop or vignette); screens at 840px and narrower stack the image above the form, and scrolling keeps the form accessible.
 - `public/assets/piripi-and-sons-real-estate.jpg`: Corrie’s supplied team photograph with PIRIPI & SONS REAL ESTATE branding
 - The earlier crayon artwork is kept in the repository solely for rollback, and is no longer shown on the site
 - `public/assets/site.css`: shared black/gold/silver design system, responsive split-layout homepage and contact-page styles
@@ -73,10 +73,12 @@ These pages use the same Google tag and social-preview image as the homepage. Pu
 The form uses the **independent** Pages Function at `/api/enquiry`, not browser `mailto:`.
 Configure **production** variables in Cloudflare > Workers & Pages > `piripiproperty` > Settings > Variables and Secrets, and redeploy after changing them:
 
-- `BREVO_API_KEY` (**encrypted secret, required**): existing Brevo transactional API credential. Never place this in GitHub or browser scripts.
+- `BREVO_API_KEY` (**encrypted secret, required**): existing Brevo transactional API credential. If a secret of this name is accessible to this **particular GitHub repository**, the deploy workflow attempts to sync it securely to the Piripi Cloudflare Pages project. A key kept only in the separate GRID EATER repository is **not** automatically available to this repository. You can alternatively add the secret directly in Cloudflare Pages. Never place the API key in committed code or browser scripts.
 - `ENQUIRY_TO_EMAIL` (**encrypted secret, optional**): Corrie's private Gmail address after it is confirmed. Its value must not appear in the public GitHub repository or static assets. Without this setting, email defaults to `david@americafirst.co.nz` as the temporary inbox.
 - `BREVO_FROM_EMAIL` (optional): default `david@grideater.com`, which must remain a verified Brevo sender. This is the sender, not the visitor's reply address.
 
 Brevo does **not** require recipients to click a verification link, but **does** require an authorised sender and API key. The form is **not live direct-send** until `BREVO_API_KEY` is present and an end-to-end test succeeds. If unavailable, visitors receive an explicit error and can use the manual email-app alternative or phone Corrie. Do **not** claim an email was sent without a provider acknowledgement. When Corrie's Google Workspace is ready, change only the private recipient variable.
 
 Abuse controls: same-origin-only JSON POSTs, field allowlist/length checks, minimum completion time and honeypot. Before promoting paid traffic, add Turnstile server-side validation and Cloudflare rate limiting for further abuse resistance.
+
+All visible enquiry fields, including the visitor's phone number and message, are mandatory. Both client and server reject missing values. The layout has a 2-column compact form beside the original photograph; mobile uses one field per row.
