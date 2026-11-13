@@ -80,4 +80,6 @@ export async function onRequestPost({ request, env }) {
   }
 }
 
-export function onRequestGet() { return json({ ok: false, error: "Method not allowed" }, 405); }
+export function onRequestGet({ env }) {
+  return json({ ok: true, ready: Boolean(typeof env?.BREVO_API_KEY === "string" && env.BREVO_API_KEY.trim()) });
+}
