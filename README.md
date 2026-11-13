@@ -35,3 +35,13 @@ npx wrangler pages deploy public --project-name=piripiproperty --branch=main
 ```
 
 Keep the project name and output directory unchanged; those explicitly isolate this website.
+
+## Social sharing previews
+
+The page declares absolute Open Graph and X/Twitter Card metadata for \`https://piripiproperty.com/\`.
+The CI workflow runs \`scripts/build_social_image.py\`, which renders a 1200x630 JPEG at
+\`/social-preview.jpg\` from the existing approved crayon illustration, preserving the
+entire drawing and adding readable Piripi Property text in the landscape card.
+
+To refresh a cached Facebook link preview, use https://developers.facebook.com/tools/debug/
+and choose **Scrape Again** for https://piripiproperty.com/ .

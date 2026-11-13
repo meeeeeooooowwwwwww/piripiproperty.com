@@ -25,11 +25,25 @@ jobs:
       - name: Checkout this repository only
         uses: actions/checkout@v4
 
+      - name: Set up Python to render social preview
+        uses: actions/setup-python@v6
+        with:
+          python-version: '3.12'
+
+      - name: Generate share image for Facebook and X
+        shell: bash
+        run: |
+          set -euo pipefail
+          python -m pip install --disable-pip-version-check Pillow==12.0.0
+          python scripts/build_social_image.py
+
       - name: Validate standalone static site
         shell: bash
         run: |
           set -euo pipefail
           test -s public/index.html
+          test -s public/social-preview.jpg
+          grep -q 'og:image' public/index.html
           test -s public/_headers
           test -s public/assets/piripi-property-coming-soon.webp
           echo "ebbd8309eeb4abc90af4d04a7671009b3e494ccdda5853c6cefbf4050fffeb89  public/assets/piripi-property-coming-soon.webp" | sha256sum -c -
