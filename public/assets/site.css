@@ -99,6 +99,48 @@ h1 strong {font-weight:600}
 .contact-page h1 {font-size:clamp(2.1rem,5vw,3.85rem);margin:10px 0 14px}
 .contact-page .intro {margin-bottom:clamp(18px,3vh,29px)}
 .contact-page .contact {gap:clamp(14px,2.1vh,22px)}
+
+/* Business-card finish, exclusive to Corrie's contact page. */
+.contact-page .page-panel {
+  isolation:isolate;
+  border:1px solid rgba(199,203,208,.36);
+  border-radius:9px;
+  background:radial-gradient(ellipse 72% 70% at 95% 0%,rgba(216,168,73,.105),transparent 75%),
+             linear-gradient(145deg,rgba(27,30,29,.98),rgba(7,9,9,.99));
+  box-shadow:0 26px 90px rgba(0,0,0,.52),inset 0 1px 0 rgba(255,255,255,.075),inset 0 0 0 1px rgba(216,168,73,.075);
+}
+.contact-page .page-panel::before {
+  left:18px;right:18px;height:2px;
+  background:linear-gradient(90deg,transparent,rgba(216,168,73,.9) 18%,#f3d58e 46%,rgba(199,203,208,.84) 75%,transparent);
+}
+.contact-page .page-panel::after {
+  content:"";position:absolute;inset:9px;pointer-events:none;
+  border:1px solid rgba(216,168,73,.085);border-radius:5px;
+}
+.contact-page h1 {letter-spacing:-.045em;margin-bottom:8px}
+.contact-page h1 strong {font-weight:650}
+.contact-page .intro {
+  margin:0 0 clamp(20px,3vh,28px);
+  color:var(--silver);font-size:.87rem;font-weight:500;
+  letter-spacing:.085em;line-height:1.4;
+}
+.contact-page .contact {
+  border-top:1px solid rgba(199,203,208,.17);
+  padding-top:clamp(17px,2.6vh,24px);
+  gap:clamp(12px,2vh,18px);
+}
+.contact-page .contact>div {
+  display:grid;grid-template-columns:82px minmax(0,1fr);
+  align-items:baseline;gap:12px;padding-left:0;border:0;
+}
+.contact-page .contact dt {color:var(--gold);margin:0;font-size:.69rem;letter-spacing:.17em}
+.contact-page .contact dd {font-size:clamp(1.05rem,2.4vw,1.34rem);font-weight:500;letter-spacing:.015em}
+.contact-page .contact a {color:var(--ivory)}
+.contact-page .contact a:hover {color:var(--gold-bright)}
+@media (max-width:520px) {
+  .contact-page .contact>div {grid-template-columns:1fr;gap:1px}
+  .contact-page .contact dd {font-size:clamp(1rem,4.6vw,1.2rem)}
+}
 @media (min-width:651px) and (min-height:650px) {
  body.contact-page {height:100dvh;min-height:0;overflow:hidden}
  .contact-page .site-shell,.contact-page .page-content {min-height:0}
