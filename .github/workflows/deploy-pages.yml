@@ -186,6 +186,15 @@ jobs:
               "https://piripiproperty.pages.dev/api/enquiry",
           ]
           verified = False
+          # Distinguish a blocked GitHub runner from an unavailable Function.
+          for homepage in ("https://piripiproperty.com/", "https://piripiproperty.pages.dev/"):
+              try:
+                  with urllib.request.urlopen(urllib.request.Request(homepage, headers={"Accept": "text/html"}), timeout=12) as response:
+                      print(f"PUBLIC_HOMEPAGE_HTTP_STATUS={response.status}, host={homepage.split('/')[2]}")
+              except urllib.error.HTTPError as exc:
+                  print(f"::notice::Homepage HTTP status={exc.code}, host={homepage.split('/')[2]}")
+              except Exception as exc:
+                  print(f"::notice::Homepage probe failed: {type(exc).__name__}")
           for url in urls:
               for attempt in range(3):
                   try:
