@@ -49,6 +49,12 @@ jobs:
           ! grep -q 'noindex' public/index.html
           test -s public/robots.txt
           test -s public/sitemap.xml
+          test -s public/contact/index.html
+          test -s public/sitemap/index.html
+          grep -Fq 'tel:+64221748354' public/contact/index.html
+          grep -Fq 'Email: corrie@piripiproperty.com' public/contact/index.html
+          grep -Fq 'https://piripiproperty.com/contact/' public/sitemap.xml
+          grep -Fq 'https://piripiproperty.com/sitemap/' public/sitemap.xml
           test -s public/_headers
           test -s public/assets/piripi-property-coming-soon.webp
           echo "ebbd8309eeb4abc90af4d04a7671009b3e494ccdda5853c6cefbf4050fffeb89  public/assets/piripi-property-coming-soon.webp" | sha256sum -c -

@@ -45,3 +45,12 @@ entire drawing and adding readable Piripi Property text in the landscape card.
 
 To refresh a cached Facebook link preview, use https://developers.facebook.com/tools/debug/
 and choose **Scrape Again** for https://piripiproperty.com/ .
+
+## Initial public pages
+
+- `/`: fixed coming-soon landing page, with unobtrusive links to Contact and Sitemap.
+- `/contact/`: Corrie Piripi's phone and business email, including `tel:` and `mailto:` links.
+- `/sitemap/`: readable navigation to Home and Contact.
+- `/sitemap.xml`: machine-readable sitemap with all three public URLs.
+
+These pages use the same Google tag and social-preview image as the homepage. The name `Piripi Property Limited` is deliberately excluded while registration is pending.
