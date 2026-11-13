@@ -71,7 +71,9 @@ jobs:
           test -s public/contact/index.html
           test -s public/sitemap/index.html
           grep -Fq 'tel:+64221748354' public/contact/index.html
-          grep -Fq 'Email: corrie@piripiproperty.com' public/contact/index.html
+          grep -Fq '>+64 22 174 8354</a>' public/contact/index.html
+          grep -Fq '>corrie@piripiproperty.com</a>' public/contact/index.html
+          ! grep -Fq 'Email: corrie@piripiproperty.com' public/contact/index.html
           grep -Fq 'https://piripiproperty.com/contact/' public/sitemap.xml
           grep -Fq 'https://piripiproperty.com/sitemap/' public/sitemap.xml
           test -s public/_headers
