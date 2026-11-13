@@ -85,7 +85,12 @@ jobs:
           test -s public/favicon-32.png
           test -s public/apple-touch-icon.png
           test -s public/site.webmanifest
-          grep -Fq 'mask-image:radial-gradient' public/assets/site.css
+          ! grep -Fq 'mask-image:' public/assets/site.css
+          grep -Fq 'grid-template-columns:minmax(0,1fr) minmax(320px,370px)' public/assets/site.css
+          grep -Fq 'class="hero__layout"' public/index.html
+          grep -Fq 'id="property-enquiry-form"' public/index.html
+          grep -Fq 'action="mailto:corrie@piripiproperty.com"' public/index.html
+          test -s public/assets/enquiry-form.js
           grep -Fq "social-preview.jpg?v=${GITHUB_SHA:0:12}" public/index.html
           grep -Fq "social-preview.jpg?v=${GITHUB_SHA:0:12}" public/contact/index.html
           grep -Fq "social-preview.jpg?v=${GITHUB_SHA:0:12}" public/sitemap/index.html
@@ -93,19 +98,19 @@ jobs:
           test -s public/assets/piripi-and-sons-real-estate.jpg
           echo "265acac99618176a7d2239a05546697996ea576704b5bfc5b2a646e6c6328a91  public/assets/piripi-and-sons-real-estate.jpg" | sha256sum -c -
           grep -Fq "/assets/piripi-and-sons-real-estate.jpg" public/index.html
-          grep -Fq 'body.home {min-height:100dvh;height:100dvh;overflow:hidden;display:grid;' public/assets/site.css
+          grep -Fq 'body.home {min-height:100dvh;display:flex;flex-direction:column}' public/assets/site.css
           grep -Fq 'class="site-header"' public/index.html
           grep -Fq 'class="site-header"' public/contact/index.html
           grep -Fq 'class="site-header"' public/sitemap/index.html
-          grep -Fq 'href="/assets/site.css?v=20261113-brighter-header"' public/index.html
+          grep -Fq 'href="/assets/site.css?v=20261113-property-enquiry"' public/index.html
           grep -Fq 'class="inner-page contact-page"' public/contact/index.html
           grep -Fq 'body.contact-page {height:100dvh;min-height:0;overflow:hidden}' public/assets/site.css
           for page in public/index.html public/contact/index.html public/sitemap/index.html; do
             grep -Fq 'class="site-footer__sitemap" href="/sitemap/"' "$page"
             ! sed -n '/<header class="site-header">/,/<\/header>/p' "$page" | grep -Fq '/sitemap/'
           done
-          ! grep -q 'href="tel:' public/index.html
-          ! grep -q 'href="mailto:' public/index.html
+          grep -Fq 'href="tel:+64221748354"' public/index.html
+          grep -Fq 'src="/assets/enquiry-form.js?v=20261113-1"' public/index.html
           ! grep -q 'href="tel:' public/sitemap/index.html
           ! grep -q 'href="mailto:' public/sitemap/index.html
           grep -q 'GTM-555PWRPR' public/index.html
