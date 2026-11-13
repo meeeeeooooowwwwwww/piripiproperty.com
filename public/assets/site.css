@@ -137,10 +137,22 @@ h1 strong {font-weight:600}
   -webkit-text-fill-color:transparent;
   filter:drop-shadow(0 2px 9px rgba(216,168,73,.10));
 }
+/* Small, quiet credentials tucked beneath Corrie's handwritten name. */
 .contact-page .intro {
-  margin:0 0 clamp(20px,3vh,28px);
-  color:var(--silver);font-size:.87rem;font-weight:500;
-  letter-spacing:.085em;line-height:1.4;
+  margin:-4px 0 clamp(20px,3vh,28px);
+  padding-left:clamp(10px,1.9vw,24px);
+  color:var(--silver);
+  font-size:clamp(.75rem,1.05vw,.8rem);
+  font-weight:500;
+  letter-spacing:.075em;
+  line-height:1.4;
+}
+@media (max-width:520px) {
+  .contact-page .intro {
+    margin-top:-2px;
+    padding-left:clamp(7px,2vw,12px);
+    font-size:.76rem;
+  }
 }
 .contact-page .contact {
   border-top:1px solid rgba(199,203,208,.17);
