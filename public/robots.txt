@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://piripiproperty.com/sitemap.xml

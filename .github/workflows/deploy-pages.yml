@@ -44,6 +44,11 @@ jobs:
           test -s public/index.html
           test -s public/social-preview.jpg
           grep -q 'og:image' public/index.html
+          grep -q 'Corrie Piripi' public/index.html
+          grep -q 'application/ld+json' public/index.html
+          ! grep -q 'noindex' public/index.html
+          test -s public/robots.txt
+          test -s public/sitemap.xml
           test -s public/_headers
           test -s public/assets/piripi-property-coming-soon.webp
           echo "ebbd8309eeb4abc90af4d04a7671009b3e494ccdda5853c6cefbf4050fffeb89  public/assets/piripi-property-coming-soon.webp" | sha256sum -c -
