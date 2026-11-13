@@ -3,5 +3,5 @@
   Referrer-Policy: strict-origin-when-cross-origin
   X-Frame-Options: DENY
   Cache-Control: no-cache, max-age=0, must-revalidate
-  Content-Security-Policy: default-src 'none'; script-src 'self' https://www.googletagmanager.com 'sha256-ncN3GiMXXUNS5+4lYiHaTmEmdKZkqNRyoFhUZpR8Bco=' 'sha256-hQXF/QU5t4zrMXzhesGw2H+kN9+6qIeP8ZQXlGHoAZE='; img-src 'self' https://www.googletagmanager.com https://*.google-analytics.com; connect-src https://www.googletagmanager.com https://*.google-analytics.com https://*.google.com; frame-src https://www.googletagmanager.com; style-src 'self' 'unsafe-inline'; manifest-src 'self'; base-uri 'none'; frame-ancestors 'none'
+  Content-Security-Policy: default-src 'none'; script-src 'self' https://www.googletagmanager.com 'sha256-ncN3GiMXXUNS5+4lYiHaTmEmdKZkqNRyoFhUZpR8Bco=' 'sha256-hQXF/QU5t4zrMXzhesGw2H+kN9+6qIeP8ZQXlGHoAZE='; img-src 'self' https://www.googletagmanager.com https://*.google-analytics.com; connect-src https://www.googletagmanager.com https://*.google-analytics.com https://*.google.com; frame-src https://www.googletagmanager.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; manifest-src 'self'; base-uri 'none'; frame-ancestors 'none'
 
