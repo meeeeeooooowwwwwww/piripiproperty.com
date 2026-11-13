@@ -56,6 +56,19 @@ jobs:
           grep -Fq 'https://piripiproperty.com/contact/' public/sitemap.xml
           grep -Fq 'https://piripiproperty.com/sitemap/' public/sitemap.xml
           test -s public/_headers
+          test -s public/assets/site.css
+          test -s public/assets/brand/logo-horizontal-transparent.svg
+          test -s public/assets/brand/mark-gold.svg
+          test -s public/favicon.svg
+          test -s public/favicon.ico
+          test -s public/favicon-32.png
+          test -s public/apple-touch-icon.png
+          test -s public/site.webmanifest
+          grep -Fq 'mask-image:radial-gradient' public/assets/site.css
+          grep -Fq "social-preview.jpg?v=${GITHUB_SHA:0:12}" public/index.html
+          grep -Fq "social-preview.jpg?v=${GITHUB_SHA:0:12}" public/contact/index.html
+          grep -Fq "social-preview.jpg?v=${GITHUB_SHA:0:12}" public/sitemap/index.html
+          grep -Fq 'Cache-Control: no-cache' public/_headers
           test -s public/assets/piripi-and-sons-real-estate.jpg
           echo "265acac99618176a7d2239a05546697996ea576704b5bfc5b2a646e6c6328a91  public/assets/piripi-and-sons-real-estate.jpg" | sha256sum -c -
           grep -Fq "/assets/piripi-and-sons-real-estate.jpg" public/index.html
