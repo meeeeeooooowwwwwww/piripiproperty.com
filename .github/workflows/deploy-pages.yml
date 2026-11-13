@@ -72,7 +72,7 @@ jobs:
           test -s public/assets/piripi-and-sons-real-estate.jpg
           echo "265acac99618176a7d2239a05546697996ea576704b5bfc5b2a646e6c6328a91  public/assets/piripi-and-sons-real-estate.jpg" | sha256sum -c -
           grep -Fq "/assets/piripi-and-sons-real-estate.jpg" public/index.html
-          grep -q 'overflow: hidden' public/index.html
+          grep -Fq 'body.home {height:100dvh;overflow:hidden}' public/assets/site.css
           grep -q 'GTM-555PWRPR' public/index.html
           grep -q 'googletagmanager.com' public/_headers
           grep -q 'piripiproperty' wrangler.toml
