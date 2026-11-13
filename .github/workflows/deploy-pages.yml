@@ -6,7 +6,8 @@ on:
   workflow_dispatch:
 
 permissions:
-  contents: write
+  contents: read
+  deployments: write
 
 concurrency:
   group: piripiproperty-pages-main
@@ -23,26 +24,6 @@ jobs:
     steps:
       - name: Checkout this repository only
         uses: actions/checkout@v4
-
-      - name: Bootstrap the exact approved artwork once
-        shell: bash
-        run: |
-          set -euo pipefail
-          asset="public/assets/piripi-property-coming-soon.webp"
-          mkdir -p "$(dirname "$asset")"
-          if [ ! -s "$asset" ]; then
-            echo "Importing the approved static image from the existing Piripi Property Pages site"
-            curl --fail --show-error --silent --location --retry 3 --retry-delay 2 \
-              "https://piripiproperty.pages.dev/assets/piripi-property-coming-soon.webp" -o "$asset"
-            echo "ebbd8309eeb4abc90af4d04a7671009b3e494ccdda5853c6cefbf4050fffeb89  $asset" | sha256sum -c -
-            git config user.name "github-actions[bot]"
-            git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-            git add "$asset"
-            if ! git diff --cached --quiet; then
-              git commit -m "assets: import verified Piripi Property coming-soon artwork [skip ci]"
-              git push origin HEAD:main
-            fi
-          fi
 
       - name: Validate standalone static site
         shell: bash
