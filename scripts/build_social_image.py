@@ -35,7 +35,7 @@ def main():
     next_url = f"https://piripiproperty.com/social-preview.jpg?v={version}"
     for page in sorted((ROOT / "public").rglob("index.html")):
         old = page.read_text(encoding="utf-8")
-        new = re.sub(r"https://piripiproperty\\.com/social-preview\\.jpg(?:\\?v=[^\\\"]*)?", next_url, old)
+        new = re.sub(r'https://piripiproperty[.]com/social-preview[.]jpg(?:[?]v=[^"]*)?', next_url, old)
         if new == old and next_url not in old:
             raise ValueError(f"No social image metadata found in {page}")
         page.write_text(new, encoding="utf-8")
