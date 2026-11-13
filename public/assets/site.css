@@ -90,9 +90,30 @@ h1 strong {font-weight:600}
 .sitemap a::after {content:"›";font-size:1.55rem;color:var(--gold)}
 .sitemap a:hover {color:var(--gold-bright)}
 
+/* Contact is a true one-screen composition on normal laptop/desktop heights.
+   On short and narrow viewports we retain natural page scrolling to protect access
+   to the phone number and email rather than clipping them. */
+.contact-page .site-shell {flex:1 1 auto;display:flex;flex-direction:column}
+.contact-page .page-content {flex:1 1 auto;display:grid;place-items:center;padding:clamp(16px,3vh,34px) 0}
+.contact-page .page-panel {width:100%;max-width:760px;padding:clamp(24px,4vh,45px) clamp(24px,4.5vw,56px)}
+.contact-page h1 {font-size:clamp(2.1rem,5vw,3.85rem);margin:10px 0 14px}
+.contact-page .intro {margin-bottom:clamp(18px,3vh,29px)}
+.contact-page .contact {gap:clamp(14px,2.1vh,22px)}
+@media (min-width:651px) and (min-height:650px) {
+ body.contact-page {height:100dvh;min-height:0;overflow:hidden}
+ .contact-page .site-shell,.contact-page .page-content {min-height:0}
+}
+@media (max-height:650px), (max-width:650px) {
+ .contact-page .page-content {padding:24px 0}
+ .contact-page .page-panel {padding:26px 23px}
+}
+
 /* Minimal footer: contact details live only on /contact/. */
 .site-footer {position:relative;z-index:3;width:100%;flex:none;background:#000;border-top:1px solid rgba(216,168,73,.20)}
 .site-footer__inner {width:min(calc(100% - 40px),1200px);margin:auto;min-height:48px;padding:11px 0 max(11px,env(safe-area-inset-bottom,0px));display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:6px 22px;color:var(--silver-muted);font-size:.70rem}
+.site-footer__right {display:flex;align-items:center;justify-content:flex-end;flex-wrap:wrap;gap:clamp(12px,2vw,24px)}
+.site-footer .site-footer__sitemap {font-size:.64rem;letter-spacing:.045em;color:var(--silver);opacity:.76}
+.site-footer .site-footer__sitemap:hover,.site-footer .site-footer__sitemap:focus-visible {color:var(--gold-bright);opacity:1}
 .site-footer a {text-decoration:none;color:var(--silver-muted)}
 .site-footer a:hover {color:var(--gold-bright)}
 @media (max-width:650px) {

@@ -76,7 +76,13 @@ jobs:
           grep -Fq 'class="site-header"' public/index.html
           grep -Fq 'class="site-header"' public/contact/index.html
           grep -Fq 'class="site-header"' public/sitemap/index.html
-          grep -Fq 'href="/assets/site.css?v=3"' public/index.html
+          grep -Fq 'href="/assets/site.css?v=4"' public/index.html
+          grep -Fq 'class="inner-page contact-page"' public/contact/index.html
+          grep -Fq 'body.contact-page {height:100dvh;min-height:0;overflow:hidden}' public/assets/site.css
+          for page in public/index.html public/contact/index.html public/sitemap/index.html; do
+            grep -Fq 'class="site-footer__sitemap" href="/sitemap/"' "$page"
+            ! sed -n '/<header class="site-header">/,/<\/header>/p' "$page" | grep -Fq '/sitemap/'
+          done
           ! grep -q 'href="tel:' public/index.html
           ! grep -q 'href="mailto:' public/index.html
           ! grep -q 'href="tel:' public/sitemap/index.html
