@@ -1,0 +1,77 @@
+name: Piripi Property | Independent Cloudflare Pages deploy
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: piripiproperty-pages-main
+  cancel-in-progress: true
+
+jobs:
+  deploy:
+    name: Validate and deploy piripiproperty only
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    env:
+      CLOUDFLARE_ACCOUNT_ID: 0ac8cf282bbdc382ef6afb38b2ca79c7
+      CLOUDFLARE_API_TOKEN: ${{ secrets.PIRIPIPROPERTY_CLOUDFLARE_API_TOKEN }}
+    steps:
+      - name: Checkout this repository only
+        uses: actions/checkout@v4
+
+      - name: Bootstrap the exact approved artwork once
+        shell: bash
+        run: |
+          set -euo pipefail
+          asset="public/assets/piripi-property-coming-soon.webp"
+          mkdir -p "$(dirname "$asset")"
+          if [ ! -s "$asset" ]; then
+            echo "Importing the approved static image from the existing Piripi Property Pages site"
+            curl --fail --show-error --silent --location --retry 3 --retry-delay 2 \
+              "https://piripiproperty.pages.dev/assets/piripi-property-coming-soon.webp" -o "$asset"
+            echo "ebbd8309eeb4abc90af4d04a7671009b3e494ccdda5853c6cefbf4050fffeb89  $asset" | sha256sum -c -
+            git config user.name "github-actions[bot]"
+            git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+            git add "$asset"
+            if ! git diff --cached --quiet; then
+              git commit -m "assets: import verified Piripi Property coming-soon artwork [skip ci]"
+              git push origin HEAD:main
+            fi
+          fi
+
+      - name: Validate standalone static site
+        shell: bash
+        run: |
+          set -euo pipefail
+          test -s public/index.html
+          test -s public/_headers
+          test -s public/assets/piripi-property-coming-soon.webp
+          echo "ebbd8309eeb4abc90af4d04a7671009b3e494ccdda5853c6cefbf4050fffeb89  public/assets/piripi-property-coming-soon.webp" | sha256sum -c -
+          grep -q 'overflow: hidden' public/index.html
+          grep -q 'piripiproperty' wrangler.toml
+          echo "Validated the isolated Piripi Property release."
+
+      - name: Check this repository's Cloudflare token
+        id: auth
+        shell: bash
+        run: |
+          if [ -n "${CLOUDFLARE_API_TOKEN:-}" ]; then
+            echo 'available=true' >> "$GITHUB_OUTPUT"
+          else
+            echo 'available=false' >> "$GITHUB_OUTPUT"
+            echo "::notice::This repository needs the PIRIPIPROPERTY_CLOUDFLARE_API_TOKEN secret to activate automatic deploys."
+          fi
+
+      - name: Deploy only the piripiproperty Pages project
+        if: steps.auth.outputs.available == 'true'
+        uses: cloudflare/wrangler-action@v4
+        with:
+          apiToken: ${{ secrets.PIRIPIPROPERTY_CLOUDFLARE_API_TOKEN }}
+          accountId: ${{ env.CLOUDFLARE_ACCOUNT_ID }}
+          command: pages deploy public --project-name=piripiproperty --branch=main
+          gitHubToken: ${{ secrets.GITHUB_TOKEN }}
