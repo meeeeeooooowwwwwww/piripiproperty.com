@@ -43,8 +43,25 @@ body.home {min-height:100dvh;height:100dvh;overflow:hidden;display:grid;grid-tem
 .hero::before {content:"";position:absolute;inset:-40px;z-index:-1;pointer-events:none;background:url("/assets/piripi-and-sons-real-estate.jpg") center/cover no-repeat;filter:blur(36px) brightness(.23) saturate(.75);opacity:.8;mask-image:radial-gradient(ellipse 88% 96% at center,#000 37%,rgba(0,0,0,.75) 65%,transparent 96%)}
 .hero__art {position:relative;z-index:1;min-height:0;height:min(100%,calc(100vw * 866 / 1320));width:auto;max-width:100%;aspect-ratio:1320/866}
 .hero__art img {display:block;width:100%;height:100%;object-fit:contain;
- -webkit-mask-image:radial-gradient(ellipse 95% 97% at center,#000 0%,#000 80%,rgba(0,0,0,.98) 90%,rgba(0,0,0,.8) 96%,transparent 100%);
- mask-image:radial-gradient(ellipse 95% 97% at center,#000 0%,#000 80%,rgba(0,0,0,.98) 90%,rgba(0,0,0,.8) 96%,transparent 100%);
+ /* Fallback for browsers without mask-composite. */
+ -webkit-mask-image:radial-gradient(ellipse 56% 60% at center,#000 75%,rgba(0,0,0,.96) 85%,transparent 100%);
+ mask-image:radial-gradient(ellipse 56% 60% at center,#000 75%,rgba(0,0,0,.96) 85%,transparent 100%);
+}
+/* Intersect two narrow linear feathers: a natural soft photographic edge,
+   without the oval darkening that obscured the men at either side. */
+@supports (mask-composite:intersect) {
+ .hero__art img {
+  mask-image:linear-gradient(90deg,transparent 0%,#000 4%,#000 96%,transparent 100%),
+             linear-gradient(180deg,transparent 0%,#000 5%,#000 95%,transparent 100%);
+  mask-composite:intersect;
+ }
+}
+@supports (-webkit-mask-composite:source-in) {
+ .hero__art img {
+  -webkit-mask-image:linear-gradient(90deg,transparent 0%,#000 4%,#000 96%,transparent 100%),
+                      linear-gradient(180deg,transparent 0%,#000 5%,#000 95%,transparent 100%);
+  -webkit-mask-composite:source-in;
+ }
 }
 /* Shared inner-page architecture */
 body.inner-page {background:
