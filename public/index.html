@@ -41,7 +41,7 @@
   <link rel="manifest" href="/site.webmanifest">
   <link rel="preload" href="/assets/piripi-and-sons-real-estate.jpg" as="image" type="image/jpeg">
   <link rel="stylesheet" href="/assets/site.css?v=20261113-property-enquiry">
-  <script src="/assets/enquiry-form.js?v=20261113-1" defer></script>
+  <script src="/assets/enquiry-form.js?v=20261113-direct-send" defer></script>
 </head>
 <body class="home">
   <header class="site-header"><div class="site-header__inner"><a class="site-header__brand" href="/" aria-label="Piripi and Sons Real Estate home"><img src="/assets/brand/mark-gold.svg" alt="" width="30" height="30"><span>PIRIPI &amp; SONS<small>REAL ESTATE</small></span></a><nav class="site-header__nav" aria-label="Main navigation"><a href="/" aria-current="page">Home</a><a href="/contact/">Contact</a></nav></div></header>
@@ -55,7 +55,7 @@
         <span class="enquiry-card__eyebrow">Your property journey</span>
         <h2 id="enquiry-heading">Let's talk property.</h2>
         <p class="enquiry-card__intro">Thinking of selling or looking to buy? Get in touch with Corrie Piripi.</p>
-        <form id="property-enquiry-form" class="enquiry-form" action="mailto:corrie@piripiproperty.com" method="post" enctype="text/plain">
+        <form id="property-enquiry-form" class="enquiry-form" action="/api/enquiry" method="post">
           <div class="enquiry-form__field">
             <label for="enquiry-name">Your name</label>
             <input id="enquiry-name" name="name" type="text" autocomplete="name" maxlength="100" required>
@@ -78,9 +78,11 @@
             <label for="enquiry-message">Your message <span>(optional)</span></label>
             <textarea id="enquiry-message" name="message" rows="3" maxlength="1500" placeholder="Tell Corrie a little about what you need"></textarea>
           </div>
-          <button class="enquiry-form__submit" type="submit">Prepare enquiry email <span aria-hidden="true">↗</span></button>
-          <p class="enquiry-form__note">This opens your email app. Press Send there to deliver your enquiry.</p>
+          <div class="enquiry-form__trap" aria-hidden="true"><label for="enquiry-company-site">Leave this field blank</label><input id="enquiry-company-site" name="company_website" type="text" autocomplete="off" tabindex="-1"></div>
+          <button class="enquiry-form__submit" type="submit">Send enquiry <span aria-hidden="true">↗</span></button>
+          <p class="enquiry-form__note">Your details are sent privately to Corrie's enquiries inbox.</p>
           <p id="enquiry-status" class="enquiry-form__status" role="status" aria-live="polite"></p>
+          <a id="enquiry-fallback" class="enquiry-form__fallback" href="mailto:david@americafirst.co.nz" hidden>Use your email app instead</a>
         </form>
         <div class="enquiry-card__direct">Or contact Corrie directly: <a href="tel:+64221748354">+64 22 174 8354</a></div>
       </aside>
