@@ -174,3 +174,29 @@ jobs:
           accountId: ${{ env.CLOUDFLARE_ACCOUNT_ID }}
           command: pages deploy public --project-name=piripiproperty --branch=main
           gitHubToken: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Check deployed enquiry endpoint readiness (read-only)
+        if: steps.auth.outputs.available == 'true'
+        shell: bash
+        run: |
+          python - <<'PY'
+          import json, time, urllib.error, urllib.request
+          url = "https://piripiproperty.com/api/enquiry"
+          for attempt in range(8):
+              try:
+                  with urllib.request.urlopen(urllib.request.Request(url, headers={"Accept": "application/json", "Cache-Control": "no-cache"}), timeout=12) as response:
+                      result = json.load(response)
+                  if result.get("ok") is True and isinstance(result.get("ready"), bool):
+                      print("PIRIPI_ENQUIRY_ENDPOINT_LIVE=PASS")
+                      if result["ready"]:
+                          print("PIRIPI_BREVO_PAGES_SECRET_AVAILABLE=YES")
+                      else:
+                          print("::notice::Cloudflare Pages does not currently expose a configured Brevo key for this website. Its email-app fallback remains in use.")
+                      break
+                  print("::warning::Enquiry readiness returned unexpected response")
+              except Exception as exc:
+                  print(f"::notice::Enquiry readiness attempt {attempt+1} did not complete: {type(exc).__name__}")
+              time.sleep(2)
+          else:
+              print("::warning::Could not verify the public enquiry endpoint; do not claim live email delivery.")
+          PY
