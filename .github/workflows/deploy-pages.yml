@@ -199,7 +199,7 @@ jobs:
                           break
                       print("::warning::Enquiry readiness returned unexpected response")
                   except urllib.error.HTTPError as exc:
-                      print(f"::notice::Enquiry readiness HTTP status={exc.code}, host={urllib.request.urlparse(url).hostname}")
+                      print(f"::notice::Enquiry readiness HTTP status={exc.code}, host={url.split('/')[2]}")
                       break
                   except Exception as exc:
                       print(f"::notice::Enquiry readiness attempt {attempt+1} failed: {type(exc).__name__}")
