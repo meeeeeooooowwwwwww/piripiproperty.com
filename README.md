@@ -8,7 +8,7 @@ A responsive coming-soon site for the Piripi & Sons Real Estate brand at [piripi
 - `public/assets/piripi-and-sons-real-estate.jpg`: Corrie’s supplied team photograph with PIRIPI & SONS REAL ESTATE branding
 - The earlier crayon artwork is kept in the repository solely for rollback, and is no longer shown on the site
 - `public/assets/site.css`: shared black/gold/silver design system, responsive split-layout homepage and contact-page styles
-- `public/assets/enquiry-form.js`: progressively enhanced `mailto:` form. Visitors must complete sending in their email application; no website-side delivery, storage, or claim of successful submission.
+- `public/assets/enquiry-form.js` and `functions/api/enquiry.js`: same-origin POST sends each validated enquiry through Brevo transactional email. The visitor receives success only after Brevo acknowledges the message. The browser never receives Corrie's private Gmail address. A visible email-app fallback appears only when delivery fails.
 - `public/assets/brand/*`: original vector monogram tracing plus stacked/horizontal brand lockups
 - `public/favicon.svg`, `public/favicon.ico`, `public/favicon-32.png`, `public/apple-touch-icon.png`: matching logo-based favicon and touch-icon set
 - `public/site.webmanifest`: web app identity/colour tokens
@@ -61,9 +61,22 @@ and choose **Scrape Again** for https://piripiproperty.com/ .
 
 ## Initial public pages
 
-- `/`: branded home with uncropped team photograph and right-side enquiry form on desktop; the form is below the photograph on mobile. Email delivery currently occurs through the visitor's own email application (not a server-side submission).
+- `/`: branded home with uncropped team photograph and right-side enquiry form on desktop; the form is below the photograph on mobile. The form POSTs to `/api/enquiry`; requires the Cloudflare Pages secret below for live direct delivery.
 - `/contact/`: Corrie Piripi's phone and business email, including `tel:` and `mailto:` links.
 - `/sitemap/`: readable navigation to Home and Contact.
 - `/sitemap.xml`: machine-readable sitemap with all three public URLs.
 
 These pages use the same Google tag and social-preview image as the homepage. Public SEO and structured data use the supplied brand **Piripi & Sons Real Estate** and name Corrie Piripi as a licensed real estate professional. `piripiproperty.com` remains the canonical domain. There is no assertion of a verified legal company name, independent agency/brokerage status, licence number or registered office. Add verified supervising agency and legal particulars once supplied by Corrie.
+
+## Private enquiry delivery (Cloudflare Pages)
+
+The form uses the **independent** Pages Function at `/api/enquiry`, not browser `mailto:`.
+Configure **production** variables in Cloudflare > Workers & Pages > `piripiproperty` > Settings > Variables and Secrets, and redeploy after changing them:
+
+- `BREVO_API_KEY` (**encrypted secret, required**): existing Brevo transactional API credential. Never place this in GitHub or browser scripts.
+- `ENQUIRY_TO_EMAIL` (**encrypted secret, optional**): Corrie's private Gmail address after it is confirmed. Its value must not appear in the public GitHub repository or static assets. Without this setting, email defaults to `david@americafirst.co.nz` as the temporary inbox.
+- `BREVO_FROM_EMAIL` (optional): default `david@grideater.com`, which must remain a verified Brevo sender. This is the sender, not the visitor's reply address.
+
+Brevo does **not** require recipients to click a verification link, but **does** require an authorised sender and API key. The form is **not live direct-send** until `BREVO_API_KEY` is present and an end-to-end test succeeds. If unavailable, visitors receive an explicit error and can use the manual email-app alternative or phone Corrie. Do **not** claim an email was sent without a provider acknowledgement. When Corrie's Google Workspace is ready, change only the private recipient variable.
+
+Abuse controls: same-origin-only JSON POSTs, field allowlist/length checks, minimum completion time and honeypot. Before promoting paid traffic, add Turnstile server-side validation and Cloudflare rate limiting for further abuse resistance.
