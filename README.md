@@ -1,20 +1,37 @@
-# Piripi Property | Coming Soon
+# Piripi Property
 
-Single-screen, fixed, scroll-free temporary homepage for https://piripiproperty.com.
+A simple, fixed, single-screen coming-soon website for [piripiproperty.com](https://piripiproperty.com).
 
-## Files
-- `public/index.html`: fixed viewport, image not cropped (`background-size: contain`).
-- `public/assets/piripi-property-coming-soon.webp`: crayon artwork with male agent, Piripi Property branding and “Website coming soon.”
-- `public/favicon.svg`: placeholder favicon.
-- `public/_headers`: Cloudflare Pages security/caching headers.
+## Site
 
-## Publish to Cloudflare Pages (recommended: Git connection)
-1. Make sure all files, including `public/assets/piripi-property-coming-soon.webp`, are committed to the `main` branch.
-2. Cloudflare dashboard > Workers & Pages > Create application > Pages > Connect to Git. Select `meeeeeooooowwwwwww/piripiproperty.com` and branch `main`.
-3. Framework preset: **None**. Build command: `exit 0` (or leave empty). Build output directory: `public`.
-4. When the deployment succeeds, open Pages > Custom domains and add `piripiproperty.com`. Add `www.piripiproperty.com` separately if wanted.
+- `public/index.html`: responsive, no-scroll full-screen page, with the illustration fully visible (no crop)
+- `public/assets/piripi-property-coming-soon.webp`: approved crayon artwork
+- `public/favicon.svg`: small house favicon
+- `public/_headers`: Cloudflare Pages headers
 
-Cloudflare Pages Git integration automatically publishes later pushes to `main`. Do **not** choose a Direct Upload project if you want automatic Git-based deployments later.
+## Independent Cloudflare deployment
 
-## Optional one-off publication
-The ZIP created alongside this repository contains the deployable files at its top level. In Cloudflare Pages choose Direct Upload and upload the ZIP; note this creates a deployment that cannot later be switched to Git integration within the same Pages project.
+This repository deploys **only** to the Cloudflare Pages project `piripiproperty`.
+It does not deploy to, or depend on, GRID EATER or any other website's Worker.
+
+- Production URL: https://piripiproperty.com
+- Cloudflare Pages project: `piripiproperty`
+- Fallback URL: https://piripiproperty.pages.dev
+- Configuration: `wrangler.toml`
+- Workflow: `.github/workflows/deploy-pages.yml`
+- Trigger: each push to `main` and manual workflow dispatch
+- Command: `wrangler pages deploy public --project-name=piripiproperty --branch=main`
+
+The Pages project was initially created using **Direct Upload**, and subsequent updates use Wrangler from this repository's GitHub Actions workflow. Do not add a competing Pages Git integration or deploy a different project's files to this Pages project.
+
+The repository secret `PIRIPIPROPERTY_CLOUDFLARE_API_TOKEN` is required. It must be a Cloudflare API token with **Account → Cloudflare Pages → Edit** access, stored in GitHub Actions secrets. No token values are checked into source control.
+
+## Local deploy
+
+Install Wrangler or run via npx, then authenticate with a Cloudflare API token and run:
+
+```bash
+npx wrangler pages deploy public --project-name=piripiproperty --branch=main
+```
+
+Keep the project name and output directory unchanged; those explicitly isolate this website.
