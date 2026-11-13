@@ -48,6 +48,8 @@ jobs:
           test -s public/assets/piripi-property-coming-soon.webp
           echo "ebbd8309eeb4abc90af4d04a7671009b3e494ccdda5853c6cefbf4050fffeb89  public/assets/piripi-property-coming-soon.webp" | sha256sum -c -
           grep -q 'overflow: hidden' public/index.html
+          grep -q 'GTM-555PWRPR' public/index.html
+          grep -q 'googletagmanager.com' public/_headers
           grep -q 'piripiproperty' wrangler.toml
           echo "Validated the isolated Piripi Property release."
 
