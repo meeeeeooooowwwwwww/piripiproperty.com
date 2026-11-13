@@ -1,0 +1,6 @@
+# Dedicated Cloudflare Pages configuration for Piripi Property.
+# No Worker routes, shared bindings, or other websites.
+name = "piripiproperty"
+pages_build_output_dir = "./public"
+compatibility_date = "2026-11-13"
+send_metrics = false
