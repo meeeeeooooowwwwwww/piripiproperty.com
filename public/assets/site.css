@@ -244,3 +244,11 @@ h1 strong {font-weight:600}
  .site-footer__inner {min-height:40px;padding-top:5px;padding-bottom:5px}
 }
 @media (prefers-reduced-motion:reduce) {html {scroll-behavior:auto}}
+
+/* Form delivery feedback and low-visibility bot honeypot. */
+.enquiry-form__trap {position:absolute;left:-10000px;top:auto;width:1px;height:1px;overflow:hidden}
+.enquiry-form__status[data-state="error"] {color:#f0a39d}
+.enquiry-form__status[data-state="success"] {color:#b5dfb8}
+.enquiry-form__fallback {font-size:.74rem;line-height:1.4}
+.enquiry-form__fallback[hidden] {display:none}
+.enquiry-form__submit:disabled {opacity:.55;cursor:wait}
