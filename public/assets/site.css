@@ -25,18 +25,27 @@ a:focus-visible {outline:2px solid var(--gold-bright);outline-offset:5px;border-
 ::selection {background:var(--gold);color:var(--black)}
 .sr-only {position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
 
-/* Full photograph is kept: the CSS mask darkens only its outer edges, never crops it. */
-body.home {height:100dvh;overflow:hidden}
-.hero {position:fixed;inset:0;isolation:isolate;display:grid;place-items:center;overflow:hidden;padding-bottom:140px;background:var(--black)}
-.hero::before {content:"";position:absolute;inset:0;pointer-events:none;background:radial-gradient(ellipse 50% 48% at 50% 48%,rgba(120,83,30,.035),transparent 90%)}
-/* Reserve the footer height *before* sizing the uncropped photograph. */
-.hero__art {position:relative;width:min(100vw,calc(152.425dvh - 213.395px));aspect-ratio:1320 / 866;flex:none}
-.hero__art img {
- display:block;width:100%;height:100%;object-fit:contain;
- -webkit-mask-image:radial-gradient(ellipse 56% 70% at 50% 50%,#000 52%,rgba(0,0,0,.99) 63%,rgba(0,0,0,.9) 73%,rgba(0,0,0,.47) 89%,transparent 100%);
- mask-image:radial-gradient(ellipse 56% 70% at 50% 50%,#000 52%,rgba(0,0,0,.99) 63%,rgba(0,0,0,.9) 73%,rgba(0,0,0,.47) 89%,transparent 100%);
-}
+/* Quiet, thin header; premium gold mark and restrained navigation. */
+.site-header {position:relative;z-index:5;width:100%;flex:none;background:linear-gradient(180deg,#0d0d0d,#000);border-bottom:1px solid rgba(216,168,73,.28)}
+.site-header__inner {width:min(calc(100% - 40px),1200px);min-height:60px;margin:auto;display:flex;align-items:center;justify-content:space-between;gap:16px}
+.site-header__brand {display:flex;align-items:center;gap:10px;min-width:0;text-decoration:none;color:var(--ivory)}
+.site-header__brand img {width:27px;height:27px;flex:none}
+.site-header__brand span {font-size:.75rem;line-height:1.2;letter-spacing:.18em;font-weight:650;white-space:nowrap}
+.site-header__brand small {display:block;font-size:.51rem;letter-spacing:.30em;font-weight:400;color:var(--gold);margin-top:2px}
+.site-header__nav {display:flex;align-items:center;gap:clamp(13px,2.6vw,32px)}
+.site-header__nav a {position:relative;text-decoration:none;color:var(--silver);font-size:.79rem;letter-spacing:.06em;padding:14px 0}
+.site-header__nav a[aria-current="page"],.site-header__nav a:hover {color:var(--gold-bright)}
+.site-header__nav a[aria-current="page"]::after {content:"";position:absolute;left:0;right:0;bottom:8px;height:1px;background:var(--gold)}
 
+/* Responsive uncropped photograph with gentle ambient bleed rather than a black oval. */
+body.home {min-height:100dvh;height:100dvh;overflow:hidden;display:grid;grid-template-rows:auto minmax(0,1fr) auto}
+.hero {position:relative;min-height:0;isolation:isolate;display:grid;place-items:center;overflow:hidden;background:#000}
+.hero::before {content:"";position:absolute;inset:-40px;z-index:-1;pointer-events:none;background:url("/assets/piripi-and-sons-real-estate.jpg") center/cover no-repeat;filter:blur(36px) brightness(.23) saturate(.75);opacity:.8;mask-image:radial-gradient(ellipse 88% 96% at center,#000 37%,rgba(0,0,0,.75) 65%,transparent 96%)}
+.hero__art {position:relative;z-index:1;min-height:0;height:min(100%,calc(100vw * 866 / 1320));width:auto;max-width:100%;aspect-ratio:1320/866}
+.hero__art img {display:block;width:100%;height:100%;object-fit:contain;
+ -webkit-mask-image:radial-gradient(ellipse 95% 97% at center,#000 0%,#000 80%,rgba(0,0,0,.98) 90%,rgba(0,0,0,.8) 96%,transparent 100%);
+ mask-image:radial-gradient(ellipse 95% 97% at center,#000 0%,#000 80%,rgba(0,0,0,.98) 90%,rgba(0,0,0,.8) 96%,transparent 100%);
+}
 /* Shared inner-page architecture */
 body.inner-page {background:
  radial-gradient(ellipse 70% 52% at 85% -10%,rgba(153,104,25,.13),transparent 72%),
@@ -44,8 +53,6 @@ body.inner-page {background:
  var(--black);
 display:flex;flex-direction:column}
 .site-shell {width:min(100% - 48px,960px);margin-inline:auto;flex:1}
-.page-header {display:flex;align-items:center;justify-content:space-between;gap:20px;padding:clamp(20px,4vw,36px) 0;border-bottom:1px solid var(--hairline)}
-.page-header__brand img {display:block;width:clamp(215px,34vw,300px);height:auto}
 .eyebrow {font-size:.72rem;letter-spacing:.31em;text-transform:uppercase;color:var(--gold);font-weight:700}
 .page-content {padding:clamp(52px,8vw,96px) 0 clamp(84px,10vw,124px)}
 .page-panel {position:relative;max-width:830px;padding:clamp(28px,5vw,68px);background:linear-gradient(145deg,rgba(23,27,26,.96),rgba(7,8,8,.98));border:1px solid var(--hairline);box-shadow:0 22px 85px rgba(0,0,0,.39)}
@@ -66,46 +73,32 @@ h1 strong {font-weight:600}
 .sitemap a::after {content:"›";font-size:1.55rem;color:var(--gold)}
 .sitemap a:hover {color:var(--gold-bright)}
 
-/* Accessible, responsive footer across the site */
-.site-footer {position:relative;z-index:2;width:100%;margin-top:auto;border-top:1px solid var(--hairline);background:rgba(0,0,0,.96)}
-.site-footer__inner {max-width:1200px;margin:auto;padding:24px clamp(19px,3.8vw,48px) 15px}
-.site-footer__top {display:flex;align-items:center;justify-content:space-between;gap:16px 36px;flex-wrap:wrap}
-.site-footer__logo img {display:block;width:clamp(190px,26vw,235px);height:auto}
-.site-footer__links {display:flex;flex-wrap:wrap;align-items:center;column-gap:25px;row-gap:9px}
-.site-footer__links a {color:var(--silver);font-size:.84rem;text-decoration:none;letter-spacing:.04em}
-.site-footer__links a:hover,.site-footer__links a:focus-visible {color:var(--gold-bright)}
-.site-footer__bottom {margin-top:15px;border-top:1px solid rgba(199,203,208,.12);padding-top:11px;display:flex;align-items:center;justify-content:space-between;gap:9px 28px;flex-wrap:wrap;color:var(--silver-muted);font-size:.72rem}
-.site-footer__bottom a {color:var(--silver-muted);text-decoration:none}
-.site-footer__bottom a:hover {color:var(--gold-bright)}
-.site-footer--overlay {position:fixed;bottom:0;left:0;border-top:0;background:linear-gradient(0deg,rgba(0,0,0,1) 0%,rgba(0,0,0,.94) 43%,rgba(0,0,0,.79) 72%,transparent 100%)}
-.site-footer--overlay .site-footer__inner {padding-top:32px;padding-bottom:max(12px,env(safe-area-inset-bottom,0px))}
-
+/* Minimal footer: contact details live only on /contact/. */
+.site-footer {position:relative;z-index:3;width:100%;flex:none;background:#000;border-top:1px solid rgba(216,168,73,.20)}
+.site-footer__inner {width:min(calc(100% - 40px),1200px);margin:auto;min-height:48px;padding:11px 0 max(11px,env(safe-area-inset-bottom,0px));display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:6px 22px;color:var(--silver-muted);font-size:.70rem}
+.site-footer a {text-decoration:none;color:var(--silver-muted)}
+.site-footer a:hover {color:var(--gold-bright)}
 @media (max-width:650px) {
- .hero {padding-bottom:170px}
- .hero__art {width:min(100vw,calc(152.425dvh - 259.123px))}
+ .site-header__inner {width:min(calc(100% - 24px),1200px);min-height:54px;gap:9px}
+ .site-header__brand {gap:7px}
+ .site-header__brand img {width:24px;height:24px}
+ .site-header__brand span {font-size:.64rem;letter-spacing:.09em}
+ .site-header__brand small {font-size:.43rem;letter-spacing:.19em}
+ .site-header__nav {gap:11px}
+ .site-header__nav a {font-size:.69rem;letter-spacing:0}
  .site-shell {width:min(100% - 36px,960px)}
- .page-header {padding:18px 0}
- .page-header__brand img {width:min(66vw,270px)}
  .page-panel {padding:28px 22px}
  .page-content {padding:50px 0 70px}
- .site-footer__inner {padding:19px 20px 13px}
- .site-footer__logo img {width:175px}
- .site-footer__top {flex-direction:column;align-items:flex-start;gap:8px}
- .site-footer__links {column-gap:18px}
- .site-footer__bottom {margin-top:12px;font-size:.66rem}
- .site-footer--overlay .site-footer__inner {padding-top:22px}
+ .site-footer__inner {width:min(calc(100% - 28px),1200px);font-size:.63rem}
 }
-@media (max-width:385px) {
- .site-footer__logo img {width:148px}
- .site-footer__links {gap:7px 14px}
- .site-footer__links a {font-size:.79rem}
+@media (max-width:375px) {
+ .site-header__brand span {font-size:.56rem}
+ .site-header__nav {gap:8px}
+ .site-header__nav a {font-size:.65rem}
+ .site-footer__inner {font-size:.61rem}
 }
-@media (max-height:550px) {
- .hero {padding-bottom:100px}
- .hero__art {width:min(100vw,calc(152.425dvh - 152.425px))}
- .site-footer--overlay .site-footer__inner {padding-top:12px;padding-bottom:6px}
- .site-footer--overlay .site-footer__logo img {width:130px}
- .site-footer--overlay .site-footer__top {gap:8px}
- .site-footer--overlay .site-footer__bottom {margin-top:5px;padding-top:5px}
+@media (max-height:430px) {
+ .site-header__inner {min-height:45px}
+ .site-footer__inner {min-height:40px;padding-top:5px;padding-bottom:5px}
 }
 @media (prefers-reduced-motion:reduce) {html {scroll-behavior:auto}}
