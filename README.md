@@ -5,7 +5,8 @@ A simple, fixed, single-screen coming-soon website for [piripiproperty.com](http
 ## Site
 
 - `public/index.html`: responsive, no-scroll full-screen page, with the illustration fully visible (no crop)
-- `public/assets/piripi-property-coming-soon.webp`: approved crayon artwork
+- `public/assets/piripi-and-sons-real-estate.jpg`: Corrie’s supplied team photograph with PIRIPI & SONS REAL ESTATE branding
+- The earlier crayon artwork is kept in the repository solely for rollback, and is no longer shown on the site
 - `public/favicon.svg`: small house favicon
 - `public/_headers`: Cloudflare Pages headers
 
@@ -40,8 +41,8 @@ Keep the project name and output directory unchanged; those explicitly isolate t
 
 The page declares absolute Open Graph and X/Twitter Card metadata for \`https://piripiproperty.com/\`.
 The CI workflow runs \`scripts/build_social_image.py\`, which renders a 1200x630 JPEG at
-\`/social-preview.jpg\` from the existing approved crayon illustration, preserving the
-entire drawing and adding readable Piripi Property text in the landscape card.
+\`/social-preview.jpg\` from Corrie’s supplied team photograph. The entire photograph, including logo and people,
+is preserved inside the social card with blurred side-fill rather than cropping.
 
 To refresh a cached Facebook link preview, use https://developers.facebook.com/tools/debug/
 and choose **Scrape Again** for https://piripiproperty.com/ .
