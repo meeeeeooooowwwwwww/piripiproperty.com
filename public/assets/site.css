@@ -27,9 +27,10 @@ a:focus-visible {outline:2px solid var(--gold-bright);outline-offset:5px;border-
 
 /* Full photograph is kept: the CSS mask darkens only its outer edges, never crops it. */
 body.home {height:100dvh;overflow:hidden}
-.hero {position:fixed;inset:0;isolation:isolate;display:grid;place-items:center;overflow:hidden;background:var(--black)}
+.hero {position:fixed;inset:0;isolation:isolate;display:grid;place-items:center;overflow:hidden;padding-bottom:140px;background:var(--black)}
 .hero::before {content:"";position:absolute;inset:0;pointer-events:none;background:radial-gradient(ellipse 50% 48% at 50% 48%,rgba(120,83,30,.035),transparent 90%)}
-.hero__art {position:relative;width:min(100vw,calc(100dvh * 1.52425));aspect-ratio:1320 / 866;flex:none}
+/* Reserve the footer height *before* sizing the uncropped photograph. */
+.hero__art {position:relative;width:min(100vw,calc(152.425dvh - 213.395px));aspect-ratio:1320 / 866;flex:none}
 .hero__art img {
  display:block;width:100%;height:100%;object-fit:contain;
  -webkit-mask-image:radial-gradient(ellipse 56% 70% at 50% 50%,#000 52%,rgba(0,0,0,.99) 63%,rgba(0,0,0,.9) 73%,rgba(0,0,0,.47) 89%,transparent 100%);
@@ -80,6 +81,8 @@ h1 strong {font-weight:600}
 .site-footer--overlay .site-footer__inner {padding-top:32px;padding-bottom:max(12px,env(safe-area-inset-bottom,0px))}
 
 @media (max-width:650px) {
+ .hero {padding-bottom:170px}
+ .hero__art {width:min(100vw,calc(152.425dvh - 259.123px))}
  .site-shell {width:min(100% - 36px,960px)}
  .page-header {padding:18px 0}
  .page-header__brand img {width:min(66vw,270px)}
@@ -98,6 +101,8 @@ h1 strong {font-weight:600}
  .site-footer__links a {font-size:.79rem}
 }
 @media (max-height:550px) {
+ .hero {padding-bottom:100px}
+ .hero__art {width:min(100vw,calc(152.425dvh - 152.425px))}
  .site-footer--overlay .site-footer__inner {padding-top:12px;padding-bottom:6px}
  .site-footer--overlay .site-footer__logo img {width:130px}
  .site-footer--overlay .site-footer__top {gap:8px}
