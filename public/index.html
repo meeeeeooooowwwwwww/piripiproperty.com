@@ -40,16 +40,51 @@
   <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png?v=2">
   <link rel="manifest" href="/site.webmanifest">
   <link rel="preload" href="/assets/piripi-and-sons-real-estate.jpg" as="image" type="image/jpeg">
-  <link rel="stylesheet" href="/assets/site.css?v=20261113-brighter-header">
+  <link rel="stylesheet" href="/assets/site.css?v=20261113-property-enquiry">
+  <script src="/assets/enquiry-form.js?v=20261113-1" defer></script>
 </head>
 <body class="home">
   <header class="site-header"><div class="site-header__inner"><a class="site-header__brand" href="/" aria-label="Piripi and Sons Real Estate home"><img src="/assets/brand/mark-gold.svg" alt="" width="30" height="30"><span>PIRIPI &amp; SONS<small>REAL ESTATE</small></span></a><nav class="site-header__nav" aria-label="Main navigation"><a href="/" aria-current="page">Home</a><a href="/contact/">Contact</a></nav></div></header>
-  <main class="hero" aria-label="Piripi &amp; Sons Real Estate coming soon">
-    <div class="hero__art" aria-hidden="true">
-      <img src="/assets/piripi-and-sons-real-estate.jpg" alt="" width="1320" height="866" fetchpriority="high" decoding="async">
+  <main class="hero" aria-label="Piripi &amp; Sons Real Estate">
+    <h1 class="sr-only">Piripi &amp; Sons Real Estate | Corrie Piripi, licensed real estate agent</h1>
+    <div class="hero__layout">
+      <div class="hero__art">
+        <img src="/assets/piripi-and-sons-real-estate.jpg" alt="Piripi &amp; Sons Real Estate team photograph with gold company branding" width="1320" height="866" fetchpriority="high" decoding="async">
+      </div>
+      <aside class="enquiry-card" aria-labelledby="enquiry-heading">
+        <span class="enquiry-card__eyebrow">Your property journey</span>
+        <h2 id="enquiry-heading">Let's talk property.</h2>
+        <p class="enquiry-card__intro">Thinking of selling or looking to buy? Get in touch with Corrie Piripi.</p>
+        <form id="property-enquiry-form" class="enquiry-form" action="mailto:corrie@piripiproperty.com" method="post" enctype="text/plain">
+          <div class="enquiry-form__field">
+            <label for="enquiry-name">Your name</label>
+            <input id="enquiry-name" name="name" type="text" autocomplete="name" maxlength="100" required>
+          </div>
+          <div class="enquiry-form__field">
+            <label for="enquiry-email">Email address</label>
+            <input id="enquiry-email" name="email" type="email" autocomplete="email" maxlength="254" required>
+          </div>
+          <div class="enquiry-form__field">
+            <label for="enquiry-interest">I'm interested in</label>
+            <select id="enquiry-interest" name="interest" required>
+              <option value="" selected disabled>Select an option</option>
+              <option value="Selling a property">Selling a property</option>
+              <option value="Buying a property">Buying a property</option>
+              <option value="A property appraisal">A property appraisal</option>
+              <option value="A general enquiry">Something else</option>
+            </select>
+          </div>
+          <div class="enquiry-form__field">
+            <label for="enquiry-message">Your message <span>(optional)</span></label>
+            <textarea id="enquiry-message" name="message" rows="3" maxlength="1500" placeholder="Tell Corrie a little about what you need"></textarea>
+          </div>
+          <button class="enquiry-form__submit" type="submit">Prepare enquiry email <span aria-hidden="true">↗</span></button>
+          <p class="enquiry-form__note">This opens your email app. Press Send there to deliver your enquiry.</p>
+          <p id="enquiry-status" class="enquiry-form__status" role="status" aria-live="polite"></p>
+        </form>
+        <div class="enquiry-card__direct">Or contact Corrie directly: <a href="tel:+64221748354">+64 22 174 8354</a></div>
+      </aside>
     </div>
-    <h1 class="sr-only">Piripi &amp; Sons Real Estate | Corrie Piripi</h1>
-    <p class="sr-only">Piripi &amp; Sons Real Estate is developing its website. Connect with Corrie Piripi, a licensed real estate professional, for New Zealand property enquiries, initially focused on Christchurch and Canterbury.</p>
   </main>
   <footer class="site-footer" aria-label="Site footer"><div class="site-footer__inner"><span>&copy; 2026 Piripi &amp; Sons Real Estate</span><div class="site-footer__right"><a class="site-footer__sitemap" href="/sitemap/">Sitemap</a><a href="https://americafirst.co.nz/" target="_blank" rel="noopener noreferrer">Website by America First Limited</a></div></div></footer>
 </body>
