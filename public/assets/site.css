@@ -30,8 +30,8 @@ a:focus-visible {outline:2px solid var(--gold-bright);outline-offset:5px;border-
 .site-header__inner {width:min(calc(100% - 40px),1200px);min-height:60px;margin:auto;display:flex;align-items:center;justify-content:space-between;gap:16px}
 .site-header__brand {display:flex;align-items:center;gap:10px;min-width:0;text-decoration:none;color:var(--ivory)}
 .site-header__brand img {width:27px;height:27px;flex:none}
-.site-header__brand span {font-size:.75rem;line-height:1.2;letter-spacing:.18em;font-weight:650;white-space:nowrap}
-.site-header__brand small {display:block;font-size:.51rem;letter-spacing:.30em;font-weight:400;color:var(--gold);margin-top:2px}
+.site-header__brand span {font-size:.75rem;line-height:1.2;letter-spacing:.18em;font-weight:650;white-space:nowrap;color:#fff;text-shadow:0 0 7px rgba(255,255,255,.12)}
+.site-header__brand small {display:block;font-size:.51rem;letter-spacing:.30em;font-weight:500;color:#ffd777;text-shadow:0 0 5px rgba(255,215,119,.16);margin-top:2px}
 .site-header__nav {display:flex;align-items:center;gap:clamp(13px,2.6vw,32px)}
 .site-header__nav a {position:relative;text-decoration:none;color:var(--silver);font-size:.79rem;letter-spacing:.06em;padding:14px 0}
 .site-header__nav a[aria-current="page"],.site-header__nav a:hover {color:var(--gold-bright)}
