@@ -33,7 +33,7 @@
       "Email: " + payload.email,
       "Interest: " + payload.interest,
       "Message: " + (payload.message || "(not provided)")
-    ].join("\\n");
+    ].join("\n");
     const link = "mailto:david@americafirst.co.nz?subject=" +
       encodeURIComponent("Piripi Property enquiry: " + payload.interest) +
       "&body=" + encodeURIComponent(body);
