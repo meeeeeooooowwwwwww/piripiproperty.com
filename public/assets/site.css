@@ -152,12 +152,20 @@ h1 strong {font-weight:600}
   align-items:baseline;gap:12px;padding-left:0;border:0;
 }
 .contact-page .contact dt {color:var(--gold);margin:0;font-size:.69rem;letter-spacing:.17em}
-.contact-page .contact dd {font-size:clamp(1.05rem,2.4vw,1.34rem);font-weight:500;letter-spacing:.015em}
+/* Tailored editorial serif: refined but distinct from the handwritten signature. */
+.contact-page .contact dd {
+  font-family:"Bodoni Moda","Bodoni MT","Didot",Georgia,serif;
+  font-size:clamp(1.15rem,2.55vw,1.48rem);
+  font-weight:500;
+  line-height:1.35;
+  letter-spacing:.018em;
+  font-variant-numeric:lining-nums;
+}
 .contact-page .contact a {color:var(--ivory)}
 .contact-page .contact a:hover {color:var(--gold-bright)}
 @media (max-width:520px) {
   .contact-page .contact>div {grid-template-columns:1fr;gap:1px}
-  .contact-page .contact dd {font-size:clamp(1rem,4.6vw,1.2rem)}
+  .contact-page .contact dd {font-size:clamp(1.06rem,4.45vw,1.22rem)}
 }
 @media (min-width:651px) and (min-height:650px) {
  body.contact-page {height:100dvh;min-height:0;overflow:hidden}
