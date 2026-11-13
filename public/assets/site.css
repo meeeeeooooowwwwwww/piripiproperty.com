@@ -148,6 +148,11 @@ h1 strong {font-weight:600}
   line-height:1.4;
 }
 @media (max-width:520px) {
+  /* Keep the calligraphic name on one line on narrow phones. */
+  .contact-page h1 strong {
+    font-size:clamp(2.65rem,13vw,3.65rem);
+    white-space:nowrap;
+  }
   .contact-page .intro {
     margin-top:-2px;
     padding-left:clamp(7px,2vw,12px);
