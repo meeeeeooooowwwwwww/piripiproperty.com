@@ -280,3 +280,29 @@ h1 strong {font-weight:600}
 }
 /* At smaller widths or very short heights, allow natural scrolling rather
    than cutting off required fields, the submission button or phone link. */
+
+/* Fit the home composition to the actual desktop browser viewport.
+   The photo is deliberately removed from intrinsic grid sizing: the
+   form can still grow naturally (e.g. larger text or delivery feedback).
+   Never conceal overflow or prevent scrolling when the content needs it. */
+@media (min-width:841px) {
+  body.home .hero {flex:1 0 auto}
+  body.home .hero__layout {
+    --hero-inset:clamp(16px,2.7vh,35px);
+    --hero-width:min(calc(100vw - 44px),1390px);
+    --hero-gap:clamp(16px,2.3vw,34px);
+    margin-block:var(--hero-inset);
+    min-height:min(
+      calc((var(--hero-width) - var(--hero-gap)) * .418 + 2px),
+      max(0px,calc(100dvh - 112px - 2 * var(--hero-inset)))
+    );
+  }
+  body.home .hero__art {position:relative}
+  body.home .hero__art img {position:absolute;inset:0}
+}
+@media (min-width:841px) and (max-height:760px) {
+  body.home .hero__layout {
+    --hero-inset:clamp(10px,1.6vh,14px);
+    --hero-width:min(calc(100vw - 44px),1190px);
+  }
+}
