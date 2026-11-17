@@ -168,6 +168,23 @@ jobs:
           node --test tests/enquiry-function.test.mjs
           echo "Validated the isolated Piripi Property release."
 
+      - name: Browser-level responsive and navigation QA
+        shell: bash
+        run: |
+          set -euo pipefail
+          python -m pip install --disable-pip-version-check "playwright==1.56.0"
+          python -m playwright install --with-deps chromium
+          python scripts/audit_responsive.py
+
+      - name: Preserve responsive QA screenshots
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: piripi-responsive-qa-${{ github.run_id }}
+          path: artifacts/responsive-qa/*.png
+          if-no-files-found: ignore
+          retention-days: 7
+
       - name: Check this repository's Cloudflare token
         if: github.event_name == 'push'
         id: auth
