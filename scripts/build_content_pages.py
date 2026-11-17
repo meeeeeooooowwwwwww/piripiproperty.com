@@ -153,6 +153,11 @@ def render(page: dict) -> str:
     page_class = (" seo-profile seo-about-landing" if path == "about" else
                   " seo-profile seo-corrie-profile" if path == "about/corrie-piripi" else
                   " seo-profile" if photo else "")
+    signature_head = (
+        '  <link rel="preconnect" href="https://fonts.googleapis.com">\n'
+        '  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>\n'
+        '  <link href="https://fonts.googleapis.com/css2?family=Pinyon+Script&display=swap" rel="stylesheet">\n'
+    ) if profile else ""
     full = f'''<!doctype html>
 <html lang="en-NZ">
 <head>
@@ -187,7 +192,7 @@ def render(page: dict) -> str:
   <link rel="shortcut icon" href="/favicon.ico?v=2">
   <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png?v=2">
   <link rel="manifest" href="/site.webmanifest">
-  <link rel="stylesheet" href="/assets/site.css?v=20261117-editorial-about-v2">
+{signature_head}  <link rel="stylesheet" href="/assets/site.css?v=20261117-editorial-about-v2">
   <script src="/assets/site-nav.js?v=20261117-seo" defer></script>
 </head>
 <body class="inner-page seo-page seo-{esc(page["category"])}{page_class}">
