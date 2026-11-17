@@ -3,6 +3,8 @@ name: Piripi Property | Independent Cloudflare Pages deploy
 on:
   push:
     branches: [main]
+  pull_request:
+    branches: [main]
   workflow_dispatch:
 
 permissions:
@@ -10,7 +12,7 @@ permissions:
   deployments: write
 
 concurrency:
-  group: piripiproperty-pages-main
+  group: piripiproperty-${{ github.ref }}
   cancel-in-progress: true
 
 jobs:
@@ -29,6 +31,12 @@ jobs:
         uses: actions/setup-python@v6
         with:
           python-version: '3.12'
+
+      - name: Generate SEO content, clean URLs and canonical sitemap
+        shell: bash
+        run: |
+          set -euo pipefail
+          python scripts/build_content_pages.py
 
       - name: Generate share image for Facebook and X
         shell: bash
@@ -66,9 +74,14 @@ jobs:
               assert any(item.get("@type") == "Person" and item.get("name") == "Corrie Piripi" for item in graph), f"Person absent: {path}"
           PY
           ! grep -q 'noindex' public/index.html
+          grep -Fq 'class="home-landing"' public/index.html
           test -s public/robots.txt
           test -s public/sitemap.xml
           test -s public/international/index.html
+          test -s public/privacy/index.html
+          test -s public/sell/index.html
+          test -s public/sell/property-appraisal/index.html
+          test -s public/guides/choosing-a-real-estate-agent/index.html
           grep -Fq 'https://piripiproperty.com/international/' public/sitemap.xml
           grep -Fq 'href="/international/"' public/sitemap/index.html
           grep -Fq 'href="/international/"' public/index.html
@@ -134,10 +147,12 @@ jobs:
           grep -q 'GTM-555PWRPR' public/index.html
           grep -q 'googletagmanager.com' public/_headers
           grep -q 'piripiproperty' wrangler.toml
+          python scripts/check_seo.py
           node --test tests/enquiry-function.test.mjs
           echo "Validated the isolated Piripi Property release."
 
       - name: Check this repository's Cloudflare token
+        if: github.event_name == 'push'
         id: auth
         shell: bash
         run: |
@@ -149,6 +164,7 @@ jobs:
           fi
 
       - name: Check whether this repository can access a Brevo secret
+        if: github.event_name == 'push'
         id: email_auth
         shell: bash
         env:
@@ -163,7 +179,7 @@ jobs:
           fi
 
       - name: Sync available GitHub Brevo secret to this Pages project
-        if: steps.auth.outputs.available == 'true' && steps.email_auth.outputs.available == 'true'
+        if: github.event_name == 'push' && steps.auth.outputs.available == 'true' && steps.email_auth.outputs.available == 'true'
         shell: bash
         continue-on-error: true
         env:
@@ -174,7 +190,7 @@ jobs:
           echo "Brevo secret was transferred securely to Piripi Property Pages."
 
       - name: Deploy only the piripiproperty Pages project
-        if: steps.auth.outputs.available == 'true'
+        if: github.event_name == 'push' && steps.auth.outputs.available == 'true'
         uses: cloudflare/wrangler-action@v4
         with:
           apiToken: ${{ secrets.PIRIPIPROPERTY_CLOUDFLARE_API_TOKEN }}
@@ -183,7 +199,7 @@ jobs:
           gitHubToken: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Check deployed enquiry endpoint readiness (read-only)
-        if: steps.auth.outputs.available == 'true'
+        if: github.event_name == 'push' && steps.auth.outputs.available == 'true'
         shell: bash
         run: |
           python - <<'PY'

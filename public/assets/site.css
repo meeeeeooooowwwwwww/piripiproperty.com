@@ -329,3 +329,78 @@ h1 strong {font-weight:600}
   .international-page .intl-next {padding:20px 18px}
 }
 
+
+
+/* SEO publishing foundation • 17 Nov 2026. Maintain page-level headings and copy in HTML. */
+.site-header__nav {gap:clamp(10px,1.8vw,23px);white-space:nowrap}
+.site-header__nav a {font-size:clamp(.69rem,.85vw,.78rem)}
+.site-header__toggle {display:none;background:transparent;border:1px solid var(--hairline);border-radius:4px;color:var(--gold-bright);font:600 .82rem/1.2 var(--type);padding:9px 12px;cursor:pointer}
+.site-header__toggle:focus-visible {outline:2px solid var(--gold-bright);outline-offset:4px}
+.site-footer .site-footer__privacy {font-size:.64rem;color:var(--silver);opacity:.78}
+.site-footer .site-footer__privacy:hover,.site-footer .site-footer__privacy:focus-visible {color:var(--gold-bright);opacity:1}
+.home-landing {width:min(100% - 44px,1130px);margin:0 auto;padding:clamp(40px,7vw,80px) 0 clamp(55px,7vw,90px)}
+.home-landing__top {max-width:800px;margin-bottom:24px}
+.home-landing h1 {font-size:clamp(2.15rem,5vw,3.8rem);font-family:Georgia,"Times New Roman",serif;line-height:1.15;color:var(--ivory)}
+.home-landing__top p {font-size:clamp(1rem,1.4vw,1.18rem);color:var(--silver);max-width:72ch}
+.home-landing h2 {font:400 clamp(1.28rem,2.3vw,1.75rem)/1.3 Georgia,"Times New Roman",serif;margin:0 0 10px}
+.home-landing__grid {display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:17px;margin:30px 0}
+.home-landing__card {border:1px solid var(--hairline);background:linear-gradient(140deg,rgba(20,25,22,.95),rgba(5,7,6,.96));padding:clamp(20px,2.3vw,31px);border-radius:6px;min-width:0}
+.home-landing__card p {color:var(--silver);font-size:.93rem;line-height:1.65}
+.home-landing__card a {font-size:.9rem;font-weight:650}
+.home-landing__note {font-size:.81rem;color:var(--silver-muted);max-width:75ch;margin:24px 0}
+.home-landing__note em {font-style:italic}
+.home-landing__note a {font-size:.76rem}
+.seo-shell {width:min(calc(100% - 42px),1090px);margin:0 auto;flex:1}
+.seo-main {padding:clamp(36px,6vw,72px) 0 clamp(68px,8vw,108px)}
+.seo-breadcrumb {color:var(--silver-muted);font-size:.72rem;line-height:1.6;margin-bottom:29px}
+.seo-breadcrumb a {color:var(--silver);text-decoration:none}
+.seo-breadcrumb a:hover {color:var(--gold-bright)}
+.seo-intro {max-width:850px;margin-bottom:35px}
+.seo-intro h1 {font:400 clamp(2.2rem,5.5vw,4.25rem)/1.12 Georgia,"Times New Roman",serif;letter-spacing:-.033em;margin:12px 0 23px;color:var(--ivory)}
+.seo-intro .intro {font-size:clamp(1rem,1.55vw,1.14rem);line-height:1.72;margin:0;color:var(--silver);max-width:75ch}
+.seo-columns {display:grid;grid-template-columns:minmax(0,1fr) minmax(248px,285px);align-items:start;gap:clamp(26px,4vw,55px)}
+.seo-content {min-width:0}
+.seo-section {padding:27px 0 30px;border-top:1px solid rgba(216,168,73,.25)}
+.seo-section:first-child {padding-top:24px}
+.seo-section h2,.seo-related h2,.seo-cta h2 {font:400 clamp(1.4rem,2.5vw,1.95rem)/1.27 Georgia,"Times New Roman",serif;margin:0 0 16px;color:var(--ivory)}
+.seo-section p,.seo-section li {color:var(--silver);font-size:.97rem;line-height:1.77}
+.seo-section p {margin:0 0 16px}
+.seo-section li {margin-bottom:8px}
+.seo-section ul {padding-left:23px;margin:0 0 18px}
+.seo-section .source-note {font-size:.7rem;color:var(--silver-muted);line-height:1.6;margin:18px 0 0}
+.source-note em,.seo-reviewed em {font-style:italic}
+.source-note a {font-size:inherit;color:var(--gold);font-weight:400;text-decoration-thickness:1px}
+.seo-cta {position:sticky;top:22px;background:linear-gradient(150deg,#171c19,#0a0d0b);border:1px solid rgba(216,168,73,.43);border-radius:6px;padding:26px}
+.seo-cta h2 {font-size:1.55rem}
+.seo-cta p {font-size:.91rem;color:var(--silver);line-height:1.66}
+.seo-cta .seo-cta-link {display:block;text-align:center;margin-top:20px;padding:12px 13px;border-radius:4px;color:#1d150b;background:linear-gradient(120deg,#f0ca77,#c9963c);text-decoration:none;font-weight:700;font-size:.86rem}
+.seo-cta .seo-cta-link:hover,.seo-cta .seo-cta-link:focus-visible {color:#10100c;background:#ffe2a0}
+.seo-related {padding:25px 0;border-top:1px solid var(--hairline)}
+.seo-related h2 {font-size:1.42rem}
+.seo-related ul {display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px 17px;list-style:none;padding:0;margin:0}
+.seo-related a {font-size:.87rem;line-height:1.5}
+.seo-reviewed {font-size:.71rem;color:var(--silver-muted);border-top:1px solid rgba(199,203,208,.15);padding-top:20px;margin-top:26px}
+.seo-page .site-footer__inner {max-width:1200px}
+@media (max-width:900px) {
+  .site-header__inner {position:relative}
+  .site-header__nav {max-width:calc(100vw - 28px);overflow-x:auto;gap:18px;padding:0 4px}
+  .has-enhanced-nav .site-header__toggle {display:inline-flex;flex:none;align-items:center}
+  .has-enhanced-nav .site-header__nav {display:none;position:absolute;top:100%;right:0;left:0;z-index:10;overflow:visible;max-width:none;background:#101412;border:1px solid rgba(216,168,73,.35);border-radius:0 0 6px 6px;box-shadow:0 20px 40px rgba(0,0,0,.55);padding:9px 15px;flex-direction:column;gap:0;white-space:normal}
+  .has-enhanced-nav .site-header__nav.is-open {display:flex}
+  .has-enhanced-nav .site-header__nav a {display:block;width:100%;padding:12px 6px;font-size:.92rem}
+  .has-enhanced-nav .site-header__nav a[aria-current="page"]::after {bottom:6px}
+  .seo-columns {grid-template-columns:minmax(0,1fr)}
+  .seo-cta {position:static;max-width:620px}
+}
+@media (max-width:700px) {
+  .home-landing__grid {grid-template-columns:minmax(0,1fr)}
+  .home-landing {width:min(calc(100% - 30px),700px)}
+  .seo-shell {width:min(calc(100% - 30px),700px)}
+  .seo-main {padding:34px 0 60px}
+  .seo-related ul {grid-template-columns:minmax(0,1fr)}
+}
+@media (prefers-reduced-motion:reduce) {
+  .seo-cta .seo-cta-link,.site-header__nav {scroll-behavior:auto}
+}
+.enquiry-form__privacy {margin:0;font-size:.65rem;line-height:1.45;color:var(--silver-muted)}
+.enquiry-form__privacy a {font-size:inherit;color:var(--silver)}
