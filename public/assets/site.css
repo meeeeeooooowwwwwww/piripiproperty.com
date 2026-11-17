@@ -306,3 +306,26 @@ h1 strong {font-weight:600}
     --hero-width:min(calc(100vw - 44px),1190px);
   }
 }
+
+
+/* International enquiries are deliberately understated until the service offer is confirmed. */
+.international-page .page-panel {max-width:860px}
+.international-page h1 {font-size:clamp(2.15rem,5.7vw,3.75rem)}
+.international-page .intro {margin-bottom:28px}
+.international-page .intl-section {border-top:1px solid rgba(199,203,208,.19);padding:23px 0 6px}
+.international-page .intl-section h2,.international-page .intl-next h2 {font:400 clamp(1.27rem,2.7vw,1.7rem)/1.32 Georgia,"Times New Roman",serif;color:var(--ivory);margin:0 0 12px}
+.international-page .intl-section p,.international-page .intl-next p {font-size:.96rem;color:var(--silver);line-height:1.75;margin:0 0 16px}
+.international-page .intl-section a {color:var(--gold-bright)}
+.international-page .intl-next {border:1px solid rgba(216,168,73,.38);background:rgba(216,168,73,.045);padding:clamp(20px,4vw,30px);margin:20px 0 24px}
+.international-page .intl-next h2 {color:var(--gold-bright)}
+.international-page .intl-cta {display:inline-flex;align-items:center;gap:12px;padding:11px 17px;margin:4px 16px 8px 0;background:linear-gradient(115deg,#e6bc69,#c89236);border:1px solid #e5ba68;border-radius:4px;color:#18120b;font-weight:700;font-size:.9rem;text-decoration:none}
+.international-page .intl-cta:hover,.international-page .intl-cta:focus-visible {background:#f5d58e;color:#18120b}
+.international-page .intl-secondary {font-size:.88rem}
+.international-page .intl-disclaimer {font-size:.81rem;line-height:1.7;color:var(--silver-muted);margin-bottom:0}
+.site-footer .site-footer__international {font-size:.64rem;letter-spacing:.045em;color:var(--silver);opacity:.76}
+.site-footer .site-footer__international:hover,.site-footer .site-footer__international:focus-visible,.site-footer .site-footer__international[aria-current="page"] {color:var(--gold-bright);opacity:1}
+@media (max-width:650px) {
+  .international-page .page-content {padding:34px 0 58px}
+  .international-page .intl-next {padding:20px 18px}
+}
+
