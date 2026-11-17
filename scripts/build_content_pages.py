@@ -48,7 +48,7 @@ def nav(current: str) -> str:
         '<img src="/assets/brand/mark-gold.svg" alt="" width="30" height="30">'
         '<span>PIRIPI &amp; SONS<small>REAL ESTATE</small></span></a>'
         '<button class="site-header__toggle" type="button" aria-controls="main-site-nav" '
-        'aria-expanded="false" aria-label="Open navigation">Menu</button>'
+        'aria-expanded="false" aria-label="Open navigation"><span class="site-header__toggle-bars" aria-hidden="true"><span></span><span></span><span></span></span></button>'
         '<nav class="site-header__nav" id="main-site-nav" aria-label="Main navigation">'
         + "".join(content) + "</nav></div></header>"
     )
@@ -58,6 +58,7 @@ def breadcrumbs(page: dict) -> list[tuple[str, str]]:
     result = [("Home", "/")]
     if path.startswith("sell/"): result.append(("Sell", "/sell/"))
     elif path.startswith("guides/"): result.append(("Guides", "/guides/"))
+    elif path.startswith("about/"): result.append(("About", "/about/"))
     elif path.startswith("areas/"): result.append(("Areas", "/areas/christchurch/"))
     if result[-1][1] != "/" + path + "/":
         result.append((page["h1"], "/" + path + "/"))
@@ -78,12 +79,14 @@ def render(page: dict) -> str:
              "name": "Piripi & Sons Real Estate", "url": f"{HOST}/",
              "logo": f"{HOST}/assets/brand/logo-horizontal-transparent.svg"},
             {"@type": "Person", "@id": f"{HOST}/#corrie-piripi",
-             "name": "Corrie Piripi", "url": f"{HOST}/contact/"},
+             "name": "Corrie Piripi", "url": f"{HOST}/about/corrie-piripi/",
+             **({"image": HOST + page["portrait"]} if page.get("portrait") else {})},
             {"@type": "WebPage", "@id": canonical + "#webpage",
              "url": canonical, "name": page["title"], "description": page["description"],
              "inLanguage": "en-NZ", "isPartOf": {"@id": f"{HOST}/#website"},
              "about": {"@id": f"{HOST}/#brand"},
-             "dateModified": page["lastReviewed"]},
+             "dateModified": page["lastReviewed"],
+             **({"primaryImageOfPage": {"@type": "ImageObject", "url": HOST + page["portrait"]}} if page.get("portrait") else {})},
         ],
     }
     if len(crumbs) > 1:
@@ -104,11 +107,12 @@ def render(page: dict) -> str:
             bullets = "<ul>" + "".join(f"<li>{esc(item)}</li>" for item in section["bullets"]) + "</ul>"
         refs = ""
         if section.get("refs"):
-            refs = ('<p class="source-note"><em>* Official references: ' +
+            refs = ('<p class="source-note"><em>* Sources: ' +
                 " · ".join(render_link(ref["url"], ref["label"]) for ref in section["refs"]) +
                 '.</em></p>')
         sections.append(f'<section class="seo-section" aria-labelledby="section-{i}">'
-                        f'<h2 id="section-{i}">{esc(section["heading"])}</h2>'
+                        f'<div class="seo-section__title"><span class="seo-section__index" aria-hidden="true">{i:02d}</span>'
+                        f'<h2 id="section-{i}">{esc(section["heading"])}</h2></div>'
                         f'{paragraphs}{bullets}{refs}</section>')
     related = ""
     if page.get("related"):
@@ -121,6 +125,32 @@ def render(page: dict) -> str:
             f'<h2 id="seo-cta-title">{esc(cta["title"])}</h2>'
             f'<p>{esc(cta["text"])}</p>'
             f'{render_link(cta["url"], cta["label"], "seo-cta-link")}</aside>')
+    photo = page.get("portrait")
+    profile = path in ("about/corrie-piripi", "about")
+    if photo and (not photo.startswith("/assets/") or not photo.endswith(".webp")):
+        raise ValueError("Invalid portrait asset: " + photo)
+    if profile and not photo:
+        raise ValueError("Portrait required for about/profile page")
+    intro_markup = (f'<header class="seo-intro">'
+                    f'<span class="eyebrow">{esc(page["kicker"])}</span>'
+                    f'<h1>{esc(page["h1"])}</h1>'
+                    f'<p class="intro">{esc(page["intro"])}</p>'
+                    f'</header>')
+    if photo:
+        image = (f'<figure class="profile-hero__portrait">'
+                 f'<img src="{esc(photo)}" width="900" height="1125" '
+                 f'alt="{esc(page.get("portraitAlt","Corrie Piripi"))}" '
+                 f'loading="eager" decoding="async" fetchpriority="high">'
+                 f'<figcaption>Corrie Piripi <span>Property &amp; people</span></figcaption>'
+                 f'</figure>')
+        intro_markup = f'<div class="profile-hero">{intro_markup}{image}</div>'
+    highlights = ""
+    if page.get("highlights"):
+        highlights = '<div class="profile-highlights" aria-label="Historical career and community milestones">' + "".join(
+            f'<div class="profile-highlights__item"><span>{esc(item["label"])}</span><p>{esc(item["text"])}</p></div>'
+            for item in page["highlights"]
+        ) + '</div>'
+    page_class = " seo-profile" if photo else ""
     full = f'''<!doctype html>
 <html lang="en-NZ">
 <head>
@@ -158,16 +188,14 @@ def render(page: dict) -> str:
   <link rel="stylesheet" href="/assets/site.css?v=20261117-seo">
   <script src="/assets/site-nav.js?v=20261117-seo" defer></script>
 </head>
-<body class="inner-page seo-page seo-{esc(page["category"])}">
+<body class="inner-page seo-page seo-{esc(page["category"])}{page_class}">
+  <a class="skip-link" href="#main-content">Skip to main content</a>
   {nav(path)}
   <div class="seo-shell">
     <main id="main-content" class="seo-main">
       <div class="seo-breadcrumb" aria-label="Breadcrumbs">{crumb_html}</div>
-      <header class="seo-intro">
-        <span class="eyebrow">{esc(page["kicker"])}</span>
-        <h1>{esc(page["h1"])}</h1>
-        <p class="intro">{esc(page["intro"])}</p>
-      </header>
+      {intro_markup}
+      {highlights}
       <div class="seo-columns">
         <article class="seo-content">{''.join(sections)}{related}</article>
         {lead}

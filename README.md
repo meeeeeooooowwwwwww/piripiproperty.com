@@ -64,6 +64,14 @@ embed, delete the old card and paste a fresh query URL, for example
 To refresh a cached Facebook link preview, use https://developers.facebook.com/tools/debug/
 and choose **Scrape Again** for https://piripiproperty.com/ .
 
+## Updated site design, portrait and licence research (17 Nov 2026)
+
+The user-approved provisional portrait is kept as `public/assets/corrie-piripi-professional.webp` (~44 KB, 900px wide), backed up in Corrie's Google Drive client folder. It is an AI-assisted enhancement of a 200px original photo and must not be misrepresented as untouched original photography. The site uses it for `/about/`, `/about/corrie-piripi/`, and a modest home trust feature. The supplied five-person homepage brand photo is untouched.
+
+The navigation keeps seven clear content destinations; at mobile widths, the toggle is a three-line icon with an accessible label but **no visible Menu text**. Generated editorial pages use numbered sections, citations as small italic `*` source lines, a verified-name Person entity and an accessible layout with a single H1. The homepage keeps one semantic main landmark and a sourced professional profile feature.
+
+Corrie directly told the site owner that his Australian real estate licence was transferred to NZ. REA confirms formal Trans-Tasman recognition exists, but the exact NZ licence class, conditions and supervising agency are not yet known. See https://www.rea.govt.nz/real-estate-professionals/apply-for-your-licence/if-you-have-an-australian-licence-or-registration/ . Do **not** label him a `licensed real estate agent` until an NZ agent-class licence is verified; generic real estate professional wording remains appropriate.
+
 ## Corrie Piripi professional profile
 
 `/about/corrie-piripi/` is generated from public source-backed professional history. The 2016 Real Estate Business profile mentions his role as chief executive of Just Property Management, the 2022 Coronis feature discusses his Australian franchise work, and LinkedIn lists professional development and community volunteer activities. These are *historical* and do not establish current NZ licence or agency authority. The current LinkedIn 200×200 photo URL is not a reliable, rights-cleared high-resolution portrait. Do not substitute a synthetic likeness or externally hotlink the expiring social image. Keep professional photograph addition pending a usable original and Corrie's consent. Expand only when identity, qualifications and personal details are verified.
