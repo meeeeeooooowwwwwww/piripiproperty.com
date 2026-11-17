@@ -345,3 +345,15 @@ Discuss with Corrie:
 - Future analytics: aggregate traffic and conversions for the international hub, without personal data in GA4. Do not count enquiries as accepted clients.
 
 **Release gate:** Phase A is approved as a restrained informational/SEO seed. Promotion or claims of an established premium or national/investor service remain pending Corrie's consultation, licence and agency verification.
+
+## 14. Delivery record — SEO foundation implementation, 17 November 2026
+
+**GitHub implementation:** PR #2 merged to main (commit `c3296386592f6e89462e0bf7bb9955b3fe1aa75d`). Includes `content/pages.json` (12 source-controlled new SEO pages), `scripts/build_content_pages.py` (static HTML and XML sitemap generation), `scripts/check_seo.py` (SEO quality gate), reusable visual design classes, optional JS mobile navigation, visible homepage H1 and discovery cards, human sitemap updates, basic privacy notice, official footnotes and safer API response headers. Existing full-height photograph and form structure preserved. Not a claim of verified live deploy until Actions and HTTP checks pass.
+
+**Google Drive confirmations:** [Internal Corrie questions, evidence and approvals](https://docs.google.com/document/d/1ZVdxkdj46sSiiEUPfhsIwLotP0E2WoSTS-59FWO8Rvk/edit), verified inside the main Corrie Piripi client folder. 20 numbered checks cover licence class, supervising agency/trading name, phone/email and service areas, appraisals, author-approved expertise, national travel, overseas clients/investors, data handling and future listings. This document is INTERNAL and questions remain unconfirmed.
+
+**Published-content caution:** Avoid describing Corrie as a 'licensed real estate agent' until his exact REA licence type and supervising agency's section 121 disclosures are verified. Current generic professional wording is temporary and does not replace required agency disclosure. The website's international page remains informational/low-prominence: LINZ investor-visa route is conditional, and nationwide travel or representation is not committed.
+
+**Operations:** GitHub Actions must complete generated page validation, existing form tests and main-branch Cloudflare deployment. Independently verify `/sell/`, `/sell/property-appraisal/`, `/guides/`, `/privacy/`, `/international/`, `/sitemap.xml`, `/api/enquiry` and mobile navigation. A ready API GET is not an end-to-end delivered lead. Test the real inbox before paid acquisition.
+
+**Next client discovery:** Obtain legal agency display and licence verification, effective service scope and home city, official email receiver, original achievements, client-approved international lead qualification and national travel thresholds. Record answers and evidence in the Drive document before promoting unverified claims.
