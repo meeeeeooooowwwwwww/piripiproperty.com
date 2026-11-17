@@ -10,6 +10,7 @@ on:
 permissions:
   contents: read
   deployments: write
+  statuses: write
 
 concurrency:
   group: piripiproperty-${{ github.ref }}
@@ -200,6 +201,7 @@ jobs:
           echo "Brevo secret was transferred securely to Piripi Property Pages."
 
       - name: Deploy only the piripiproperty Pages project
+        id: deploy
         if: github.event_name == 'push' && steps.auth.outputs.available == 'true'
         uses: cloudflare/wrangler-action@v4
         with:
