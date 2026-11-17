@@ -109,6 +109,12 @@ jobs:
           grep -Fq 'https://piripiproperty.com/sitemap/' public/sitemap.xml
           test -s public/_headers
           test -s public/assets/site.css
+          grep -Fq 'class="home-proof__identity"' public/index.html
+          grep -Fq 'class="home-proof__portrait"' public/index.html
+          grep -Fq 'seo-about-landing' scripts/build_content_pages.py
+          grep -Fq 'seo-corrie-profile' scripts/build_content_pages.py
+          grep -Fq 'height:auto;' public/assets/site.css
+          grep -Fq 'grid-template-areas:"identity portrait" "details portrait"' public/assets/site.css
           test -s public/assets/brand/logo-horizontal-transparent.svg
           test -s public/assets/brand/mark-gold.svg
           test -s public/favicon.svg
@@ -143,7 +149,7 @@ jobs:
           grep -Fq 'class="site-header"' public/index.html
           grep -Fq 'class="site-header"' public/contact/index.html
           grep -Fq 'class="site-header"' public/sitemap/index.html
-          grep -Fq 'href="/assets/site.css?v=20261113-aligned-enquiry"' public/index.html
+          grep -Fq 'href="/assets/site.css?v=20261117-editorial-about-v2"' public/index.html
           grep -Fq 'class="inner-page contact-page"' public/contact/index.html
           grep -Fq 'body.contact-page {height:100dvh;min-height:0;overflow:hidden}' public/assets/site.css
           for page in public/index.html public/contact/index.html public/sitemap/index.html; do
@@ -219,7 +225,7 @@ jobs:
           import time, urllib.request
           base = 'https://piripiproperty.com'
           checks = [
-            ('/', b'home-proof__content'),
+            ('/', b'home-proof__identity'),
             ('/about/', b'profile-hero'),
             ('/about/corrie-piripi/', b'profile-highlights'),
             ('/sitemap.xml', b'/about/corrie-piripi/'),
