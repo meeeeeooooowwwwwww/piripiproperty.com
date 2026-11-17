@@ -484,3 +484,13 @@ h1 strong {font-weight:600}
 @media (prefers-reduced-motion:reduce) {
  .site-header__toggle-bars span {transition:none}
 }
+
+
+/* Homepage has one main landmark; preserve the full-height, uncropped original brand hero. */
+.home-main {display:flex;flex:1 0 auto;flex-direction:column;min-width:0}
+.home-main .hero {width:100%;flex:1 0 auto}
+.home-main .home-landing {flex:none}
+.home-main .home-proof {flex:none}
+@media (max-width:840px) {
+ .home-main .hero {flex:0 0 auto}
+}
