@@ -257,7 +257,7 @@ jobs:
           # Distinguish a blocked GitHub runner from an unavailable Function.
           for homepage in ("https://piripiproperty.com/", "https://piripiproperty.pages.dev/"):
               try:
-                  with urllib.request.urlopen(urllib.request.Request(homepage, headers={"Accept": "text/html"}), timeout=12) as response:
+                  with urllib.request.urlopen(urllib.request.Request(homepage, headers={"Accept": "text/html", "User-Agent": "PiripiReleaseAudit/1.0"}), timeout=12) as response:
                       print(f"PUBLIC_HOMEPAGE_HTTP_STATUS={response.status}, host={homepage.split('/')[2]}")
               except urllib.error.HTTPError as exc:
                   print(f"::notice::Homepage HTTP status={exc.code}, host={homepage.split('/')[2]}")
@@ -266,7 +266,7 @@ jobs:
           for url in urls:
               for attempt in range(3):
                   try:
-                      request = urllib.request.Request(url, headers={"Accept": "application/json", "Cache-Control": "no-cache"})
+                      request = urllib.request.Request(url, headers={"Accept": "application/json", "Cache-Control": "no-cache", "User-Agent": "PiripiReleaseAudit/1.0"})
                       with urllib.request.urlopen(request, timeout=12) as response:
                           result = json.load(response)
                       if result.get("ok") is True and isinstance(result.get("ready"), bool):
