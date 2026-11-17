@@ -402,3 +402,5 @@ h1 strong {font-weight:600}
 @media (prefers-reduced-motion:reduce) {
   .seo-cta .seo-cta-link,.site-header__nav {scroll-behavior:auto}
 }
+.enquiry-form__privacy {margin:0;font-size:.65rem;line-height:1.45;color:var(--silver-muted)}
+.enquiry-form__privacy a {font-size:inherit;color:var(--silver)}
