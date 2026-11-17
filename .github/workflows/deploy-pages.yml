@@ -210,6 +210,39 @@ jobs:
           command: pages deploy public --project-name=piripiproperty --branch=main
           gitHubToken: ${{ secrets.GITHUB_TOKEN }}
 
+      - name: Smoke test production SEO pages and portrait
+        id: smoke
+        if: github.event_name == 'push' && steps.deploy.outcome == 'success'
+        shell: bash
+        run: |
+          python - <<'PY'
+          import time, urllib.request
+          base = 'https://piripiproperty.com'
+          checks = [
+            ('/', b'home-proof__content'),
+            ('/about/', b'profile-hero'),
+            ('/about/corrie-piripi/', b'profile-highlights'),
+            ('/sitemap.xml', b'/about/corrie-piripi/'),
+          ]
+          checks.append(('/assets/corrie-piripi-professional.webp', b'WEBP'))
+          for path, marker in checks:
+              last = 'no response'
+              for attempt in range(4):
+                  try:
+                      req = urllib.request.Request(base + path, headers={'User-Agent':'PiripiReleaseAudit/1.0'})
+                      with urllib.request.urlopen(req, timeout=15) as response:
+                          data = response.read(500000)
+                          if response.status != 200: raise ValueError('HTTP status ' + str(response.status))
+                          if marker not in data: raise ValueError('Expected release marker missing')
+                      print('PIRIPI_SMOKE_PASS=' + path)
+                      break
+                  except Exception as exc:
+                      last = type(exc).__name__ + ': ' + str(exc)
+                      if attempt < 3: time.sleep(3)
+              else:
+                  raise SystemExit('PIRIPI_SMOKE_FAIL=' + path + ' ' + last)
+          PY
+
       - name: Check deployed enquiry endpoint readiness (read-only)
         if: github.event_name == 'push' && steps.auth.outputs.available == 'true'
         shell: bash
