@@ -5,7 +5,7 @@
  */
 const json = (data, status = 200) => new Response(JSON.stringify(data), {
   status,
-  headers: { "Content-Type": "application/json; charset=utf-8", "Cache-Control": "no-store", "X-Content-Type-Options": "nosniff" }
+  headers: { "Content-Type": "application/json; charset=utf-8", "Cache-Control": "no-store", "X-Content-Type-Options": "nosniff", "Referrer-Policy": "no-referrer", "X-Frame-Options": "DENY", "Content-Security-Policy": "default-src 'none'; frame-ancestors 'none'" }
 });
 const emailOk = (s) => typeof s === "string" && s.length <= 254 && /^[A-Za-z0-9.!#$%&'*+/=?^_`{|}~-]+@[A-Za-z0-9](?:[A-Za-z0-9.-]*[A-Za-z0-9])?\.[A-Za-z]{2,}$/.test(s);
 const interests = new Set(["Selling a property", "Buying a property", "A property appraisal", "A general enquiry"]);
