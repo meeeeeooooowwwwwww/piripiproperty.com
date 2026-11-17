@@ -176,34 +176,34 @@ Each guide must add original, genuinely useful analysis, current NZ guidance, re
 
 ### 7.1 Versioned content and URL contract
 Create a validated source-of-truth manifest/content collection with:
-- \`route\`, \`contentType\`, \`intentCluster\`, \`pageTitle\`, \`metaDescription\`, \`h1\`, \`canonical\`, \`language=en-NZ\`, \`publicationStatus\`, \`indexable\`, \`sitemap\`, \`lastSubstantialChange\`, \`ogImage\`, \`author\`, \`reviewer\`, \`lastReviewed\`, \`sourceRefs\`, \`claimsApproved\`, \`parentRoute\`, \`crossLinks\`, \`geoScope\`, \`serviceStatus\`, \`ctaKind\`.
-- Support explicit \`draft | review | approved | published | retired\` publication states; only approved/published may produce production HTML, sitemap or internal discovery links. Drafts should not be public behind a mere robots exclusion; keep them unpublished or access-controlled.
+- `route`, `contentType`, `intentCluster`, `pageTitle`, `metaDescription`, `h1`, `canonical`, `language=en-NZ`, `publicationStatus`, `indexable`, `sitemap`, `lastSubstantialChange`, `ogImage`, `author`, `reviewer`, `lastReviewed`, `sourceRefs`, `claimsApproved`, `parentRoute`, `crossLinks`, `geoScope`, `serviceStatus`, `ctaKind`.
+- Support explicit `draft | review | approved | published | retired` publication states; only approved/published may produce production HTML, sitemap or internal discovery links. Drafts should not be public behind a mere robots exclusion; keep them unpublished or access-controlled.
 - Reusable build-time components generate consistent header/footer, accessible navigation, breadcrumbs, article citations, title/description, OG metadata, JSON-LD, XML and human sitemaps.
 - Fail the build if duplicate canonical/title/intent targets, empty descriptions, broken references, fake/inconsistent entity facts, unapproved pages or mismatched canonical-sitemap links.
-- Use clean permanent URLs; maintain 301 redirects for renamed/deleted routes, no redirect chains or soft-404s. Canonical production origin is \`https://piripiproperty.com\` (no www). Audit HTTP/www/\`pages.dev\` alternate behaviour separately. A canonical link alone does **not** eliminate all duplicated domains.
-- Include only canonical indexable HTTP 200 pages in \`sitemap.xml\`. Set XML \`lastmod\` only for real content/structured-data/link changes, not every build or footer date. Do not bother with ignored sitemap \`priority\`/\`changefreq\`.
-- Use native HTML links (\`<a href>\`) and essential full copy rendered in deploy-time HTML. JS enhances interactions, not content discovery. Mobile version exposes the same important content and links; do not gate menus behind broken JS.
+- Use clean permanent URLs; maintain 301 redirects for renamed/deleted routes, no redirect chains or soft-404s. Canonical production origin is `https://piripiproperty.com` (no www). Audit HTTP/www/`pages.dev` alternate behaviour separately. A canonical link alone does **not** eliminate all duplicated domains.
+- Include only canonical indexable HTTP 200 pages in `sitemap.xml`. Set XML `lastmod` only for real content/structured-data/link changes, not every build or footer date. Do not bother with ignored sitemap `priority`/`changefreq`.
+- Use native HTML links (`<a href>`) and essential full copy rendered in deploy-time HTML. JS enhances interactions, not content discovery. Mobile version exposes the same important content and links; do not gate menus behind broken JS.
 
 ### 7.2 Semantic entity and structured data design
-- Single consistent identity graph IDs for \`WebSite\`, approved \`Brand\`, verified \`Person\`, and each \`WebPage\`/appropriate article; cite/source public factual claims. Use article byline, accurate review/modified date, editorial context and verifiable professional licence as available.
-- Add \`BreadcrumbList\` for hierarchical pages that show navigable breadcrumbs. Use \`Article\` for substantively authored guides. Make JSON-LD match publicly visible facts; validate JSON schema and Rich Results Test where Google supports the type. Rich-result display is never promised.
-- \`RealEstateAgent\`/\`LocalBusiness\`/organisation business address/phone/service area/profile/entity markup only after legal agency status, public display rules, genuine location and operation are checked. Never invent offices, licence class, accolades, sales, reviews, star ratings or achievements.
-- Article FAQ sections are useful for humans, but FAQ structured data is not an assumed general-business rich-result opportunity. Avoid schema inflation.
-- Do **not** implement \`hreflang\` simply because some leads are based overseas. \`en-NZ\` HTML and NZ-focused content are appropriate for a single English website. Add \`hreflang\` only when genuine alternate-language/locale URL versions exist.
-- No requirement for \`llms.txt\`, "AI-specific schema", mass AI summaries, keyword-density targets, fabricated author identities or arbitrary minimum word counts. Google's 2026 AI search guidance explicitly prioritises existing Search Essentials and original non-commodity content.
+- Single consistent identity graph IDs for `WebSite`, approved `Brand`, verified `Person`, and each `WebPage`/appropriate article; cite/source public factual claims. Use article byline, accurate review/modified date, editorial context and verifiable professional licence as available.
+- Add `BreadcrumbList` for hierarchical pages that show navigable breadcrumbs. Use `Article` for substantively authored guides. Make JSON-LD match publicly visible facts; validate JSON schema and Rich Results Test where Google supports the type. Rich-result display is never promised.
+- `RealEstateAgent`/`LocalBusiness`/organisation business address/phone/service area/profile/entity markup only after legal agency status, public display rules, genuine location and operation are checked. Never invent offices, licence class, accolades, sales, reviews, star ratings or achievements.
+- Article FAQ sections are useful for humans, but Google ended general FAQ rich-result support in 2026; FAQ sections may help humans, but FAQ schema is not an SEO rich-result opportunity for this business. Avoid schema inflation.
+- Do **not** implement `hreflang` simply because some leads are based overseas. `en-NZ` HTML and NZ-focused content are appropriate for a single English website. Add `hreflang` only when genuine alternate-language/locale URL versions exist.
+- No requirement for `llms.txt`, "AI-specific schema", mass AI summaries, keyword-density targets, fabricated author identities or arbitrary minimum word counts. Google's 2026 AI search guidance explicitly prioritises existing Search Essentials and original non-commodity content.
 
 ### 7.3 Performance, cache, images and accessibility
 - Target the 75th percentile of *field* experience: **LCP ≤2.5s, INP ≤200ms, CLS ≤0.1** (mobile primary, desktop also tested). Lab budgets are diagnostic, not field data substitutes. Track median and p75 only when sample size adequate; display insufficient-data state honestly.
-- Optimise responsive hero and article images using modern formats (AVIF/WebP with safe fallbacks if supported), \`srcset\`/\`sizes\`, explicit dimensions/aspect ratio, appropriate fetch priority for only the hero, deferred offscreen images, compression, minimal request chains. Preserve Corrie's supplied five-person artwork and all faces/branding; never crop as a performance hack.
-- HTML should be cache-correct and deployable atomically; fingerprint CSS/JS/images and use long immutable asset caching, with HTML revalidation/short-cache policy. Current global \`Cache-Control: no-cache\` is good for active development but not the final optimised asset policy. Changing caching must include preview and rollback tests.
+- Optimise responsive hero and article images using modern formats (AVIF/WebP with safe fallbacks if supported), `srcset`/`sizes`, explicit dimensions/aspect ratio, appropriate fetch priority for only the hero, deferred offscreen images, compression, minimal request chains. Preserve Corrie's supplied five-person artwork and all faces/branding; never crop as a performance hack.
+- HTML should be cache-correct and deployable atomically; fingerprint CSS/JS/images and use long immutable asset caching, with HTML revalidation/short-cache policy. Current global `Cache-Control: no-cache` is good for active development but not the final optimised asset policy. Changing caching must include preview and rollback tests.
 - Keep JS small: accessible menus, forms, consent and optional progressive enhancements only. Self-host/subset fonts or use performant fallbacks where practical; avoid heavy carousels, autoplay overlays, third-party scripts and intrusive pop-ups.
 - Accessibility acceptance **WCAG 2.2 AA**: keyboard menu, visible focus, skip-to-main, logical landmarks/H headings, readable 200% text zoom, comfortable touch target sizes, contrast, descriptive form errors/status, reduced-motion settings, accessible consent and mobile viewport fit. Test 320, 375, 768, 1280 px plus narrow-height viewports; no clipped contact form.
 - Use responsive *content parity*, not just responsive styling; Google indexes primarily the mobile experience.
 
 ### 7.4 Cloudflare and security engineering
-- Keep original \`piripiproperty\` Pages project, \`public/\` output, \`wrangler.toml\` and existing Wrangler GitHub workflow; no second Git integration or deployment into GRID EATER.
-- Audit all \`public/_headers\` policies, including CSP, X-Content-Type-Options, Referrer-Policy, clickjacking protections and safe font/analytics origins. **Cloudflare \`_headers\` rules do not apply to Pages Functions responses.** Attach suitable security and \`Cache-Control: no-store\` directly to API responses.
-- Set \`X-Robots-Tag: noindex\` on actual \`*.pages.dev\` preview hosts where appropriate; prefer access control for confidential drafts, not robots as a security mechanism. Verify headers on response, not only repo source. Never block the main production host.
+- Keep original `piripiproperty` Pages project, `public/` output, `wrangler.toml` and existing Wrangler GitHub workflow; no second Git integration or deployment into GRID EATER.
+- Audit all `public/_headers` policies, including CSP, X-Content-Type-Options, Referrer-Policy, clickjacking protections and safe font/analytics origins. **Cloudflare `_headers` rules do not apply to Pages Functions responses.** Attach suitable security and `Cache-Control: no-store` directly to API responses.
+- Set `X-Robots-Tag: noindex` on actual `*.pages.dev` preview hosts where appropriate; prefer access control for confidential drafts, not robots as a security mechanism. Verify headers on response, not only repo source. Never block the main production host.
 - GET readiness of the enquiry endpoint is **not** a delivered lead: confirm secret presence, server Brevo acceptance, provider log, verified inbox receipt and fallback on failure. Validate CORS/origin, body bounds, abuse controls and Turnstile server-side. Keep secrets server-only; no form values logged into public analytics, URLs or exception traces.
 - Retain the existing CI tests but remove **brittle exact CSS/HTML string assertions** before switching to shared templates; replace with semantic assertions and screenshot regression coverage. Existing CI currently hard-codes homepage markup, CSS values, date-tagged assets and the original navigation: changing navigation without updating these tests will fail deployment.
 
@@ -211,7 +211,7 @@ Create a validated source-of-truth manifest/content collection with:
 For every PR/build:
 1. Lint and typecheck generator/content schema; validate all publication-state and factual-claim gates.
 2. Generate the entire static site; smoke-test final generated output, not only source.
-3. Crawl generated pages; flag broken internal links, redirects, errors, non-200 canonical URLs, orphan pages, duplicate titles/H1s, inconsistent canonical/OG/JSON-LD, missing article source/author metadata, unexpected \`noindex\` or sitemap pages.
+3. Crawl generated pages; flag broken internal links, redirects, errors, non-200 canonical URLs, orphan pages, duplicate titles/H1s, inconsistent canonical/OG/JSON-LD, missing article source/author metadata, unexpected `noindex` or sitemap pages.
 4. Accessibility automation (axe or equivalent) plus manual keyboard/mobile visual checks. Run Lighthouse CI mobile and desktop, record deltas; initially warn on targets and fail serious regressions once a measured baseline is established.
 5. Unit-test Pages Function including bad input, honeypot, rate limit, Turnstile failure, upstream timeout, acknowledgement and email fallback. Never send real emails from routine CI.
 6. Preview with proper noindex/access, compare screenshots of branding and faces; approval gate for commercial/licence claims; deploy by existing Wrangler route, then production HTTP/canonical/schema/sitemap/analytics checks.
@@ -226,9 +226,9 @@ Separate three concepts in content data and UX:
 2. **Normal service area:** only areas Corrie/agency explicitly accepts and is able to service; Canterbury is the initial planning focus, not a compliance-verified public statement.
 3. **Discretionary assignments:** potential nationwide work requiring prequalification, project suitability, supervising-agency authority, professional oversight, travel and resource availability and written agreement. **No auto-acceptance**, no automatic mileage or price cutoff.
 
-Define statuses \`verified_local\`, \`conditionally_available\`, \`unconfirmed\` and \`unsupported\` in internal data. Publication rules should allow service promises only after verification. A conditional national possibility does **not** justify dozens of city SEO landing pages, GBP offices or local-business schemas.
+Define statuses `verified_local`, `conditionally_available`, `unconfirmed` and `unsupported` in internal data. Publication rules should allow service promises only after verification. A conditional national possibility does **not** justify dozens of city SEO landing pages, GBP offices or local-business schemas.
 
-**Future route (do not publish until approved):** \`/services/specialist-property-enquiries/\` or \`/services/nationwide-property-consultation/\`; strong intent-specific explanation of fit and a private qualification form, *not* a "real estate agent in Wellington/Auckland" doorway page.
+**Future route (do not publish until approved):** `/services/specialist-property-enquiries/` or `/services/nationwide-property-consultation/`; strong intent-specific explanation of fit and a private qualification form, *not* a "real estate agent in Wellington/Auckland" doorway page.
 
 Build a reusable geographic taxonomy (country → region → city → actual serviced subareas) now, but only create indexable location pages containing original and genuinely relevant local expertise. Each page should have distinct data and a useful user path; never copy a Christchurch page and replace the place name.
 
@@ -238,14 +238,14 @@ Build a reusable geographic taxonomy (country → region → city → actual ser
 
 Different intents (keep separate so we do not conflate seller, investor or buyer rules):
 - **NZ residents/owners selling locally:** primary appraisal journey.
-- **People based abroad who own NZ property:** potentially strong content opportunity, e.g. \`/guides/selling-new-zealand-property-from-overseas/\`, with practical owner-to-agent communication, time zones, agency agreements, legal adviser and identity verification signposts, only after factual review.
+- **People based abroad who own NZ property:** potentially strong content opportunity, e.g. `/guides/selling-new-zealand-property-from-overseas/`, with practical owner-to-agent communication, time zones, agency agreements, legal adviser and identity verification signposts, only after factual review.
 - **Potential premium/specialist vendors anywhere in NZ:** conditional consultation gate, not an unconditional travel promise.
 - **Prospective overseas purchasers/investors:** legally sensitive eligibility and property acquisition information. **Not** an open nationwide foreign-buyer promise, and not the primary launch lead funnel.
 
 **Important 2026 legal change:** On 6 March 2026 overseas-investment reforms took effect. Certain holders of Active Investor Plus/Investor 1/Investor 2 visas may apply for consent for residential property worth more than **NZ$5 million** (subject to the specific pathway/conditions); broader foreign-buyer restrictions remain. This is a specialist **editorial/partnership research topic**, not a general sales-service eligibility claim. Refer enquiries to qualified NZ legal/immigration advice and current LINZ guidance. Never present the exception as permission for all wealthy offshore buyers.
 
 **Candidate high-value enquiry schema (future, privacy reviewed):**
-- relationship: \`seller/owner\`, \`buyer\`, \`authorised representative\`, \`general advice\`;
+- relationship: `seller/owner`, `buyer`, `authorised representative`, `general advice`;
 - property city/region (not compulsory exact street address at first contact); property category (residential, lifestyle, commercial etc **only if service is actually authorised**);
 - broad *optional* value band (including "prefer not to say") and estimated timing, time zone/country and preferred contact method;
 - short description, contact details, acknowledgement of purpose/privacy notice;
@@ -271,7 +271,7 @@ Avoid collection of passports, IDs, title deeds, visa numbers, AML documents or 
 |---|---|---|
 | ARC-01 | Static generation | Prototype small typed source-of-truth generator **vs Astro SSG content collections**. Choose the simplest with reproducible output, CI, metadata and rollout parity. Existing Pages remains unchanged until tests pass. |
 | ARC-02 | Content management | Source-controlled content/Markdown and reviewed source references first; no CMS/database by default. |
-| ARC-03 | Internationalisation | One \`en-NZ\` canonical English site; no unnecessary translated clones or \`hreflang\` until real versions exist. |
+| ARC-03 | Internationalisation | One `en-NZ` canonical English site; no unnecessary translated clones or `hreflang` until real versions exist. |
 | ARC-04 | Taxonomy | National region/city schema can exist internally but public location pages require unique approved service-area evidence and user value. |
 | ARC-05 | High-value | A premium/nationwide consultation workflow is a gated hypothesis; no service-level promise or numerical value threshold until Corrie approves it. |
 | ARC-06 | Offshore | Distinguish offshore NZ owners selling from regulated overseas buyers. Legal review and source citations before any foreign-investment landing page. |
