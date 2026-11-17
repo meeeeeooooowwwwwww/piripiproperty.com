@@ -10,6 +10,7 @@ from __future__ import annotations
 import asyncio
 import functools
 import json
+import os
 import threading
 from http.server import SimpleHTTPRequestHandler, ThreadingHTTPServer
 from pathlib import Path
@@ -44,7 +45,11 @@ def handler(*args, **kwargs):
 async def run_browser(base_url: str) -> None:
     SCREENSHOTS.mkdir(parents=True, exist_ok=True)
     async with async_playwright() as p:
-        browser = await p.chromium.launch(headless=True, args=["--no-sandbox"])
+        launch = {"headless": True, "args": ["--no-sandbox"]}
+        executable = os.environ.get("PIRIPI_CHROME_EXECUTABLE", "").strip()
+        if executable:
+            launch["executable_path"] = executable
+        browser = await p.chromium.launch(**launch)
         for route, name in CHECKS:
             for viewport_name, width, height in VIEWPORTS:
                 page = await browser.new_page(
