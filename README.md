@@ -62,11 +62,12 @@ and choose **Scrape Again** for https://piripiproperty.com/ .
 ## Initial public pages
 
 - `/`: branded home with uncropped team photograph and right-side enquiry form on desktop; the form is below the photograph on mobile. The form POSTs to `/api/enquiry`; requires the Cloudflare Pages secret below for live direct delivery.
+- `/international/`: low-prominence public information for NZ property enquiries from overseas. This is not a commitment to nationwide travel, investor advice, foreign-buyer eligibility assessments or representation before agency/client verification.
 - `/contact/`: Corrie Piripi's phone and business email, including `tel:` and `mailto:` links.
 - `/sitemap/`: readable navigation to Home and Contact.
 - `/sitemap.xml`: machine-readable sitemap with all three public URLs.
 
-These pages use the same Google tag and social-preview image as the homepage. Public SEO and structured data use the supplied brand **Piripi & Sons Real Estate** and name Corrie Piripi as a licensed real estate professional. `piripiproperty.com` remains the canonical domain. There is no assertion of a verified legal company name, independent agency/brokerage status, licence number or registered office. Add verified supervising agency and legal particulars once supplied by Corrie.
+These pages use the same Google tag and social-preview image as the homepage. International is linked discreetly from the footer and sitemaps; the header navigation remains Home/Contact until Corrie's service authority and geographic coverage are confirmed. Public SEO and structured data use the supplied brand **Piripi & Sons Real Estate** and name Corrie Piripi as a licensed real estate professional. `piripiproperty.com` remains the canonical domain. There is no assertion of a verified legal company name, independent agency/brokerage status, licence number or registered office. Add verified supervising agency and legal particulars once supplied by Corrie.
 
 ## Private enquiry delivery (Cloudflare Pages)
 

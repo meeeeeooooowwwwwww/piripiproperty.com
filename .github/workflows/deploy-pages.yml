@@ -68,6 +68,13 @@ jobs:
           ! grep -q 'noindex' public/index.html
           test -s public/robots.txt
           test -s public/sitemap.xml
+          test -s public/international/index.html
+          grep -Fq 'https://piripiproperty.com/international/' public/sitemap.xml
+          grep -Fq 'href="/international/"' public/sitemap/index.html
+          grep -Fq 'href="/international/"' public/index.html
+          grep -Fq 'href="/international/"' public/contact/index.html
+          grep -Fq 'https://www.linz.govt.nz/guidance/overseas-investment' public/international/index.html
+          grep -Fq '<link rel="canonical" href="https://piripiproperty.com/international/">' public/international/index.html
           test -s public/contact/index.html
           test -s public/sitemap/index.html
           grep -Fq 'tel:+64221748354' public/contact/index.html

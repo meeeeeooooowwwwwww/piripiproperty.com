@@ -316,3 +316,32 @@ New Zealand:
 - https://www.privacy.org.nz/privacy-principles/12/
 
 **Change management:** This v2 document is internal-only; it does not mean the commercial proposal was amended, the client's approvals were secured, or the production site was modified. The next engineering deliverable is a reversible static-generation and site-crawl quality-gate proof of concept; public publication of claims stays behind the verification gates above.
+
+## 13. Approved internal international-investor direction — 17 November 2026
+
+**Owner decision:** International and overseas-investor positioning is a desired part of the long-term Piripi & Sons strategy. Introduce a **small, factual international section now**, but **do not** elevate it to primary navigation, promise investor services, nationwide travel, luxury sales expertise, visas, investment returns, acquisition eligibility, or an accepted high-value client programme until Corrie's direct confirmation and the appropriate legal/agency review.
+
+### Phase A — discreet launch
+- Publish `/international/` as an informative **New Zealand property enquiries from overseas** landing page; link it quietly from the footer and human/XML sitemaps. Existing Home/Contact header and supplied artwork are unchanged.
+- The page explicitly addresses **overseas investors and prospective buyers**, plus **existing NZ property owners living abroad**. It references the NZ overseas-buying restrictions and conditional, consent-required 2026 investor-visa pathway, and links directly to current LINZ sources.
+- State only that a preliminary enquiry can be made. Do not claim Corrie personally qualifies investors, provides legal/financial/immigration advice, arranges travel, has national agency offices or can accept every overseas buyer. Out-of-area availability is **not assured**.
+- Direct to existing general website enquiry/contact pathways, without collecting passports, visa numbers, funds evidence or detailed personal finance.
+- Use real content, unique metadata, canonical URL, consistent non-fabricated Person/Brand/WebPage JSON-LD, mobile-readable design and a crawlable internal path.
+- Check current site's exact licence claims and supervising-agency disclosures separately; the international addition does not authorise an incorrect role statement elsewhere.
+
+### Phase B — client discovery and commercial qualification (not approved for public promise)
+Discuss with Corrie:
+1. His licensed role, supervising agency, and authorisation to act for overseas buyers, NZ owners abroad, specific property classes, and out-of-region transactions.
+2. Whether he wants to work with non-resident owners selling in NZ, eligible investor-visa purchasers, or both; referral support and relevant specialist counsel.
+3. What property types, indicative value/commission bands, location, seller or buyer authority, commercial fit and workload justify a nationwide engagement, and who covers travel.
+4. Whether a remote introductory conversation can screen leads before travel; whether separate private legal/AML documentation handoff is needed; preferred international contact process and time zones.
+5. What independently verifiable experience and professional partners can be shown publicly, with permission.
+
+### Phase C — after confirmation
+- Upgrade navigation from footer-only to a clearly labelled **International** or **Overseas Investors** main entry only when service scope is confirmed; avoid pretending to operate multiple NZ branches.
+- Expand `/international/` into distinct pages for (a) overseas owners selling in NZ, (b) eligible overseas investor purchasing pathways, (c) conditional nationwide/premium-property consultation, each with properly reviewed, substantively distinct information.
+- Add a privacy-reviewed qualified lead form with **optional** property region/type/value band, relationship, time zone and remote consultation request; no hard-coded eligibility verdict or invented value cutoff. Maintain clear signposting to current LINZ and lawyer advice.
+- Add reputable original articles with dated references; review legal details at least each material policy change. No automated generic city pages or fabricated sales history.
+- Future analytics: aggregate traffic and conversions for the international hub, without personal data in GA4. Do not count enquiries as accepted clients.
+
+**Release gate:** Phase A is approved as a restrained informational/SEO seed. Promotion or claims of an established premium or national/investor service remain pending Corrie's consultation, licence and agency verification.
