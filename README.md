@@ -5,7 +5,7 @@
 The source-controlled `content/pages.json` is built by `python scripts/build_content_pages.py` into ordinary crawlable HTML under `public/`, plus the canonical XML sitemap. The Google Search Essentials and REA/Settled/LINZ notes are small italic asterisk footnotes at the end of relevant content sections. `python scripts/check_seo.py` checks the generated site for broken links, canonical/title/H1/schema/sitemap problems and unverified protected licence wording. GitHub Actions runs these checks on pull requests before any merge; only a push to `main` may run Wrangler deployment. No JavaScript rendering is required for primary content.
 
 
-A responsive coming-soon site for the Piripi & Sons Real Estate brand at [piripiproperty.com](https://piripiproperty.com).
+A responsive, static-first real estate information and enquiry site for Piripi & Sons, with **17 published canonical pages** at [piripiproperty.com](https://piripiproperty.com).
 
 ## Site
 
@@ -13,11 +13,31 @@ A responsive coming-soon site for the Piripi & Sons Real Estate brand at [piripi
 - `public/assets/piripi-and-sons-real-estate.jpg`: Corrie’s supplied team photograph with PIRIPI & SONS REAL ESTATE branding
 - The earlier crayon artwork is kept in the repository solely for rollback, and is no longer shown on the site
 - `public/assets/site.css`: shared black/gold/silver design system, responsive split-layout homepage and contact-page styles
-- `public/assets/enquiry-form.js` and `functions/api/enquiry.js`: same-origin POST sends each validated enquiry through Brevo transactional email. The visitor receives success only after Brevo acknowledges the message. The browser never receives Corrie's private Gmail address. A visible email-app fallback appears only when delivery fails.
+- `public/assets/enquiry-form.js` and `functions/api/enquiry.js`: same-origin POST can send a validated enquiry through Brevo **only after this Pages project has a configured secret and recipient**. The live readiness check currently reports `ready:false`, so the site prepares an email-app fallback instead. Never claim direct delivery until a test message reaches the intended inbox. No private client mailbox or provider secret is embedded in public JavaScript.
 - `public/assets/brand/*`: original vector monogram tracing plus stacked/horizontal brand lockups
 - `public/favicon.svg`, `public/favicon.ico`, `public/favicon-32.png`, `public/apple-touch-icon.png`: matching logo-based favicon and touch-icon set
 - `public/site.webmanifest`: web app identity/colour tokens
 - `public/_headers`: Cloudflare Pages headers
+
+## Current release and QA evidence (18 November 2026)
+
+Read the [authoritative session-close handover](docs/operations/handovers/PIRIPI-SEO-SESSION-CLOSE-2026-11-18.md) before starting new development. The user approved the latest compact portrait and editorial About design.
+
+**Verified production release:** [GitHub Actions 44072449332](https://github.com/meeeeeooooowwwwwww/piripiproperty.com/actions/runs/44072449332) passed with 17/17 published pages HTTP 200, canonical/H1/meta and security checks, pages.dev noindex, healthy `/api/enquiry` GET, all linked static assets, and 18/18 real Chromium mobile/tablet/desktop browser checks. Screenshots are retained as 7-day GitHub Actions artifacts. Nine enquiry unit tests pass, but direct email delivery remains **not configured**.
+
+Run these release checks locally or in GitHub Actions:
+
+```bash
+python scripts/build_content_pages.py
+python scripts/check_seo.py
+node --test tests/enquiry-function.test.mjs
+# With Playwright and Chromium installed:
+python scripts/audit_responsive.py
+# After a real Cloudflare deploy:
+python scripts/audit_live.py
+```
+
+Avoid duplicating the existing deployment, removing the user-approved layout, or treating self-reported licensing as independent NZ REA verification.
 
 ## Independent Cloudflare deployment
 
