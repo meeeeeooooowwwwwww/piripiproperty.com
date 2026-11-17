@@ -77,6 +77,8 @@ def render(page: dict) -> str:
             {"@type": "Brand", "@id": f"{HOST}/#brand",
              "name": "Piripi & Sons Real Estate", "url": f"{HOST}/",
              "logo": f"{HOST}/assets/brand/logo-horizontal-transparent.svg"},
+            {"@type": "Person", "@id": f"{HOST}/#corrie-piripi",
+             "name": "Corrie Piripi", "url": f"{HOST}/contact/"},
             {"@type": "WebPage", "@id": canonical + "#webpage",
              "url": canonical, "name": page["title"], "description": page["description"],
              "inLanguage": "en-NZ", "isPartOf": {"@id": f"{HOST}/#website"},
