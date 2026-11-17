@@ -1,0 +1,931 @@
+{
+  "schemaVersion": 1,
+  "site": "https://piripiproperty.com",
+  "generatedBy": "scripts/build_content_pages.py",
+  "lastSourceReview": "2026-11-17",
+  "pages": [
+    {
+      "path": "sell",
+      "title": "Selling a House in Christchurch | Piripi & Sons Real Estate",
+      "description": "Understand the steps of selling a house in Christchurch, from an evidence-based appraisal to marketing, agency agreements and settlement.",
+      "kicker": "For homeowners",
+      "h1": "Thinking about selling your house?",
+      "intro": "Selling property is a sequence of decisions, not just an advertisement. Explore the questions to ask, how an appraisal works and what to confirm before appointing a real estate professional.",
+      "sections": [
+        {
+          "heading": "Start by understanding your property's position",
+          "paragraphs": [
+            "A useful first discussion covers your reasons for selling, your timeframe, the property type and what you need to achieve. A market appraisal should be based on current comparable evidence and the condition and features of your property, rather than a generic online estimate.",
+            "Ask what assumptions were used and whether the proposed sale method suits your circumstances."
+          ],
+          "bullets": [],
+          "refs": [
+            {
+              "label": "REA — property appraisals",
+              "url": "https://www.rea.govt.nz/real-estate-professionals/industry-guidance-and-information/listing-a-property/appraisals/"
+            }
+          ]
+        },
+        {
+          "heading": "Compare selling methods and marketing plans",
+          "paragraphs": [
+            "Auction, deadline sale, tender and advertised-price methods each involve trade-offs. Ask how interested buyers will be reached, what marketing is recommended, who pays for it and how the asking strategy could change if buyer feedback differs from expectations."
+          ],
+          "bullets": [
+            "Request an itemised estimate of marketing and commission, including GST treatment.",
+            "Ask who will handle enquiries, viewings, offers and negotiations.",
+            "Read the agency agreement carefully and take independent legal advice."
+          ],
+          "refs": [
+            {
+              "label": "REA — agency agreements",
+              "url": "https://www.rea.govt.nz/real-estate-professionals/industry-guidance-and-information/listing-a-property/agency-agreements/"
+            },
+            {
+              "label": "Settled — selling with an agent",
+              "url": "https://www.settled.govt.nz/selling-a-home/selling-your-property/selling-with-an-agent/"
+            }
+          ]
+        },
+        {
+          "heading": "When you're ready to talk",
+          "paragraphs": [
+            "Piripi & Sons welcomes preliminary property enquiries. Corrie is Christchurch-based. The scope of any representation, service area, appraisal and agency arrangements must be confirmed before an engagement begins.",
+            "If you are based overseas, see the separate international information page, where purchase eligibility and out-of-area arrangements are treated as case-by-case questions."
+          ],
+          "bullets": [],
+          "refs": [
+            {
+              "label": "REA — choosing a real estate professional",
+              "url": "https://www.rea.govt.nz/buyers-and-sellers/find-an-agent/"
+            }
+          ]
+        }
+      ],
+      "related": [
+        {
+          "href": "/sell/property-appraisal/",
+          "text": "How property appraisals work"
+        },
+        {
+          "href": "/guides/selling-costs/",
+          "text": "Understand selling costs"
+        },
+        {
+          "href": "/guides/selling-a-house/",
+          "text": "Step-by-step selling guide"
+        },
+        {
+          "href": "/international/",
+          "text": "Enquiring from overseas"
+        }
+      ],
+      "cta": {
+        "title": "Discuss a potential sale",
+        "text": "Share the broad property location and your questions. No obligation or price estimate is implied.",
+        "url": "/#property-enquiry-form",
+        "label": "Enquire about selling"
+      },
+      "category": "sellers",
+      "lastReviewed": "2026-11-17"
+    },
+    {
+      "path": "sell/property-appraisal",
+      "title": "Property Appraisal Christchurch | How It Works | Piripi & Sons",
+      "description": "Learn what a written property appraisal involves in New Zealand and ask about an initial Christchurch property appraisal conversation.",
+      "kicker": "Seller guide",
+      "h1": "Property appraisals in Christchurch",
+      "intro": "A professional property appraisal is a reasoned assessment of an expected selling price at a particular time. It is not a guaranteed sale price or an automated valuation.",
+      "sections": [
+        {
+          "heading": "What should a property appraisal include?",
+          "paragraphs": [
+            "Under New Zealand's professional conduct rules, a written appraisal must realistically reflect current market conditions and, where available, be supported by comparable sales of similar properties. If there are no meaningful comparable sales, that limitation must be explained.",
+            "A conversation about an appraisal may consider your property's size, condition, location, improvements and current comparable evidence. Any actual assessment and representation must be provided through the appropriate licensed agency arrangements."
+          ],
+          "bullets": [
+            "Information about the property and any major alterations.",
+            "Recent comparable property sales and relevant market conditions.",
+            "A clear explanation of how an estimated range was reached."
+          ],
+          "refs": [
+            {
+              "label": "REA — property appraisals",
+              "url": "https://www.rea.govt.nz/real-estate-professionals/industry-guidance-and-information/listing-a-property/appraisals/"
+            }
+          ]
+        },
+        {
+          "heading": "Appraisal, online estimate and formal valuation",
+          "paragraphs": [
+            "An online estimate can be a broad automated indication, but it does not replace a property-specific written appraisal. A registered valuation is a different professional service, often commissioned for lending, legal or other purposes. Ask which document you need before making decisions.",
+            "The site does not calculate a value or promise an instant appraisal."
+          ],
+          "bullets": [],
+          "refs": [
+            {
+              "label": "REA — property appraisals",
+              "url": "https://www.rea.govt.nz/real-estate-professionals/industry-guidance-and-information/listing-a-property/appraisals/"
+            }
+          ]
+        },
+        {
+          "heading": "Preparing for the conversation",
+          "paragraphs": [
+            "Have the general property location, style, timeframe and any unusual features ready. There is no need to email identity documents, title deeds or financial records at the enquiry stage.",
+            "If you are comparing professionals, ask about the evidence, sale options, proposed marketing plan and agency obligations before signing."
+          ],
+          "bullets": [],
+          "refs": [
+            {
+              "label": "Settled — selling with an agent",
+              "url": "https://www.settled.govt.nz/selling-a-home/selling-your-property/selling-with-an-agent/"
+            },
+            {
+              "label": "REA — agency agreements",
+              "url": "https://www.rea.govt.nz/real-estate-professionals/industry-guidance-and-information/listing-a-property/agency-agreements/"
+            }
+          ]
+        }
+      ],
+      "related": [
+        {
+          "href": "/sell/",
+          "text": "Selling a home"
+        },
+        {
+          "href": "/guides/selling-costs/",
+          "text": "Costs of selling"
+        },
+        {
+          "href": "/areas/christchurch/",
+          "text": "Christchurch property enquiries"
+        }
+      ],
+      "cta": {
+        "title": "Request an appraisal conversation",
+        "text": "Use the existing form to describe your property enquiry; a formal assessment is subject to confirmation.",
+        "url": "/#property-enquiry-form",
+        "label": "Start an appraisal enquiry"
+      },
+      "category": "sellers",
+      "lastReviewed": "2026-11-17"
+    },
+    {
+      "path": "buy",
+      "title": "Buying a Home in New Zealand | Piripi & Sons",
+      "description": "Straightforward guidance for New Zealand home buyers: finance, due diligence, sale agreements and questions to ask before making an offer.",
+      "kicker": "For buyers",
+      "h1": "Buying a home in New Zealand",
+      "intro": "Buying a home involves more than finding a property. Understanding finance, investigations, contracts and deadlines helps you make clearer decisions.",
+      "sections": [
+        {
+          "heading": "Before you start",
+          "paragraphs": [
+            "Determine your budget with a lender or mortgage adviser, including a margin for legal and property investigation costs. Clarify whether your finance is conditional and what evidence your lender will need.",
+            "Choose a lawyer or conveyancer early. They can review the sale and purchase agreement and help you understand important conditions before you sign."
+          ],
+          "bullets": [],
+          "refs": [
+            {
+              "label": "Settled — independent buyer and seller guidance",
+              "url": "https://www.settled.govt.nz/"
+            }
+          ]
+        },
+        {
+          "heading": "Check the property, not just the brochure",
+          "paragraphs": [
+            "Depending on the property, due diligence may include a building inspection, title review, LIM information, insurance availability, rates and any body-corporate or tenancy documents. Appropriate checks vary, so obtain independent professional advice.",
+            "A sale and purchase agreement is legally significant. Do not assume a general website guide is sufficient to evaluate the risks in a particular purchase."
+          ],
+          "bullets": [],
+          "refs": [
+            {
+              "label": "REA — approved consumer guides",
+              "url": "https://www.rea.govt.nz/buyers-and-sellers/read-our-guides/"
+            }
+          ]
+        },
+        {
+          "heading": "Overseas buyers need an eligibility check",
+          "paragraphs": [
+            "Eligibility to buy residential land in New Zealand depends on the buyer's circumstances and the property. Most overseas people cannot simply buy residential property because they have sufficient funds. Certain pathways require consent and detailed legal assessment."
+          ],
+          "bullets": [],
+          "refs": [
+            {
+              "label": "LINZ — overseas investment rules",
+              "url": "https://www.linz.govt.nz/guidance/overseas-investment/buying-residential-property-live"
+            },
+            {
+              "label": "LINZ — qualifying $5m+ investor pathway",
+              "url": "https://www.linz.govt.nz/guidance/overseas-investment/ways-invest/pathways-migrants-and-visa-holders/investing-residential-land-over-5-million"
+            }
+          ]
+        }
+      ],
+      "related": [
+        {
+          "href": "/guides/buying-a-home/",
+          "text": "First steps for home buyers"
+        },
+        {
+          "href": "/international/",
+          "text": "Overseas property enquiries"
+        },
+        {
+          "href": "/contact/",
+          "text": "Contact Corrie"
+        }
+      ],
+      "cta": {
+        "title": "Have a property question?",
+        "text": "Start with a general enquiry. Availability and appropriate services must be confirmed for your circumstances.",
+        "url": "/#property-enquiry-form",
+        "label": "Ask a question"
+      },
+      "category": "buyers",
+      "lastReviewed": "2026-11-17"
+    },
+    {
+      "path": "areas/christchurch",
+      "title": "Real Estate and Selling a Home in Christchurch | Piripi & Sons",
+      "description": "Useful Christchurch-focused property selling guidance, appraisal questions and a way to contact Christchurch-based Corrie Piripi.",
+      "kicker": "Christchurch",
+      "h1": "Property conversations in Christchurch",
+      "intro": "Christchurch has a varied mix of homes, sections and neighbourhoods. A useful property discussion should consider the specific location and condition of the property, not just a city-wide average.",
+      "sections": [
+        {
+          "heading": "Start with the neighbourhood and property type",
+          "paragraphs": [
+            "A property on the edge of the central city may raise different questions from a hillside property, a new subdivision home or an older character house. Local context can include school zones, transport, surrounding development, flood information and property-specific restrictions.",
+            "These factors should be checked through authoritative sources and qualified professionals where relevant. We do not publish invented suburb prices or claim to cover every neighbourhood."
+          ],
+          "bullets": [],
+          "refs": [
+            {
+              "label": "Settled — independent buyer and seller guidance",
+              "url": "https://www.settled.govt.nz/"
+            }
+          ]
+        },
+        {
+          "heading": "Why property-specific evidence matters",
+          "paragraphs": [
+            "A credible appraisal draws on comparable properties and current market conditions. Differences in floor area, land, building condition, location and sale circumstances may make two nearby houses unlike one another.",
+            "If you are thinking of selling in Christchurch, request an explanation of the comparable evidence used and the proposed marketing approach."
+          ],
+          "bullets": [],
+          "refs": [
+            {
+              "label": "REA — property appraisals",
+              "url": "https://www.rea.govt.nz/real-estate-professionals/industry-guidance-and-information/listing-a-property/appraisals/"
+            },
+            {
+              "label": "Settled — selling with an agent",
+              "url": "https://www.settled.govt.nz/selling-a-home/selling-your-property/selling-with-an-agent/"
+            }
+          ]
+        },
+        {
+          "heading": "Where Corrie is based",
+          "paragraphs": [
+            "Corrie Piripi is Christchurch-based. Contact him with your broad location, proposed timeframe and the type of assistance you are looking for. The agency, licensed role and scope of representation must be verified before a formal engagement."
+          ],
+          "bullets": [],
+          "refs": [
+            {
+              "label": "REA — choosing a real estate professional",
+              "url": "https://www.rea.govt.nz/buyers-and-sellers/find-an-agent/"
+            }
+          ]
+        }
+      ],
+      "related": [
+        {
+          "href": "/sell/",
+          "text": "Selling a house"
+        },
+        {
+          "href": "/sell/property-appraisal/",
+          "text": "Property appraisal process"
+        },
+        {
+          "href": "/guides/choosing-a-real-estate-agent/",
+          "text": "Choosing an agent"
+        }
+      ],
+      "cta": {
+        "title": "Start a Christchurch property enquiry",
+        "text": "Tell us your general location and what you would like to discuss.",
+        "url": "/#property-enquiry-form",
+        "label": "Contact Corrie"
+      },
+      "category": "areas",
+      "lastReviewed": "2026-11-17"
+    },
+    {
+      "path": "about",
+      "title": "About Piripi & Sons Real Estate | Corrie Piripi",
+      "description": "Learn about the Piripi & Sons Real Estate brand and contact Christchurch-based Corrie Piripi. Verified credentials and agency details will be added once confirmed.",
+      "kicker": "About",
+      "h1": "Piripi & Sons Real Estate",
+      "intro": "Piripi & Sons Real Estate is a developing property-facing brand and website centred on professional communication, helpful information and conversations with Corrie Piripi.",
+      "sections": [
+        {
+          "heading": "A clear starting point",
+          "paragraphs": [
+            "The website's focus is to make early property conversations straightforward: understanding whether someone is selling, buying, exploring a property appraisal or seeking information about New Zealand property from overseas.",
+            "This is a preliminary public presence. We will publish additional professional credentials, agency details and experience only when they have been independently verified and approved."
+          ],
+          "bullets": [],
+          "refs": [
+            {
+              "label": "REA — choosing a real estate professional",
+              "url": "https://www.rea.govt.nz/buyers-and-sellers/find-an-agent/"
+            }
+          ]
+        },
+        {
+          "heading": "People and professional responsibilities",
+          "paragraphs": [
+            "In New Zealand, licence classes and supervision arrangements matter. Prospective clients should verify the current licence class and licensed agency details of the professional they work with, and check the requirements of any agency agreement before authorising property marketing.",
+            "The REA maintains the public register and guidance for buyers and sellers."
+          ],
+          "bullets": [],
+          "refs": [
+            {
+              "label": "REA — choosing a real estate professional",
+              "url": "https://www.rea.govt.nz/buyers-and-sellers/find-an-agent/"
+            },
+            {
+              "label": "REA — agency agreements",
+              "url": "https://www.rea.govt.nz/real-estate-professionals/industry-guidance-and-information/listing-a-property/agency-agreements/"
+            }
+          ]
+        },
+        {
+          "heading": "What to expect from an initial enquiry",
+          "paragraphs": [
+            "Share the broad area, whether you are interested in selling or buying, and a suitable contact method. You do not need to share financial statements, identity documents or detailed property records to begin a conversation."
+          ],
+          "bullets": [],
+          "refs": []
+        }
+      ],
+      "related": [
+        {
+          "href": "/contact/",
+          "text": "Contact Corrie"
+        },
+        {
+          "href": "/sell/",
+          "text": "Selling guidance"
+        },
+        {
+          "href": "/international/",
+          "text": "International enquiries"
+        }
+      ],
+      "cta": {
+        "title": "Get in touch",
+        "text": "The first step is a simple question or introduction, not a binding engagement.",
+        "url": "/contact/",
+        "label": "Contact Corrie"
+      },
+      "category": "about",
+      "lastReviewed": "2026-11-17"
+    },
+    {
+      "path": "guides",
+      "title": "New Zealand Property Guides | Selling and Buying | Piripi & Sons",
+      "description": "Independent reference-led reading on selling, appraisals, choosing a real estate professional, buying property and overseas enquiries in New Zealand.",
+      "kicker": "Property knowledge",
+      "h1": "New Zealand property guides",
+      "intro": "A growing collection of concise, practical information for people making property decisions. Articles link to relevant official New Zealand guidance and are reviewed when material rules change.",
+      "sections": [
+        {
+          "heading": "Selling your property",
+          "paragraphs": [
+            "Start with the basics: how agency agreements work, what an appraisal should show, what costs to ask about and how to compare marketing approaches."
+          ],
+          "bullets": [],
+          "refs": [
+            {
+              "label": "REA — approved consumer guides",
+              "url": "https://www.rea.govt.nz/buyers-and-sellers/read-our-guides/"
+            }
+          ]
+        },
+        {
+          "heading": "Choosing professional help",
+          "paragraphs": [
+            "Check an individual's licence class and the agency they work under. Ask about experience with similar properties, the proposed marketing process and the evidence supporting an appraisal."
+          ],
+          "bullets": [],
+          "refs": [
+            {
+              "label": "REA — choosing a real estate professional",
+              "url": "https://www.rea.govt.nz/buyers-and-sellers/find-an-agent/"
+            }
+          ]
+        },
+        {
+          "heading": "Buying and international enquiries",
+          "paragraphs": [
+            "A purchase involves contracts, independent due diligence and often professional legal advice. Overseas residential purchases can have additional eligibility requirements, so specialist advice is important."
+          ],
+          "bullets": [],
+          "refs": [
+            {
+              "label": "Settled — independent buyer and seller guidance",
+              "url": "https://www.settled.govt.nz/"
+            },
+            {
+              "label": "LINZ — overseas investment rules",
+              "url": "https://www.linz.govt.nz/guidance/overseas-investment/buying-residential-property-live"
+            }
+          ]
+        }
+      ],
+      "related": [
+        {
+          "href": "/guides/choosing-a-real-estate-agent/",
+          "text": "How to choose a real estate agent"
+        },
+        {
+          "href": "/guides/selling-a-house/",
+          "text": "Selling a house: the steps"
+        },
+        {
+          "href": "/guides/selling-costs/",
+          "text": "Selling costs explained"
+        },
+        {
+          "href": "/guides/buying-a-home/",
+          "text": "Buying a home: first steps"
+        },
+        {
+          "href": "/guides/selling-from-overseas/",
+          "text": "Selling NZ property from overseas"
+        }
+      ],
+      "cta": {
+        "title": "Have a question these guides don't answer?",
+        "text": "An initial enquiry can help identify which next step or professional advice may be appropriate.",
+        "url": "/contact/",
+        "label": "Contact Corrie"
+      },
+      "category": "guides",
+      "lastReviewed": "2026-11-17"
+    },
+    {
+      "path": "guides/choosing-a-real-estate-agent",
+      "title": "How to Choose a Real Estate Agent in NZ | Questions to Ask",
+      "description": "A practical New Zealand checklist: verifying a real estate professional, comparing appraisals, commission and marketing plans.",
+      "kicker": "Selling guide",
+      "h1": "How to choose a real estate professional",
+      "intro": "Choosing who to work with can affect your selling experience. Compare the information and service proposed, rather than relying on claims or a single estimated sale price.",
+      "sections": [
+        {
+          "heading": "Check the licence and who supervises the work",
+          "paragraphs": [
+            "The Real Estate Authority maintains the public register of licensed salespeople, branch managers and agents. The classes are different, and a salesperson acts for or on behalf of a licensed agent.",
+            "Check the relevant licensed agency as well as the individual. A polished website is not a substitute for independent verification."
+          ],
+          "bullets": [],
+          "refs": [
+            {
+              "label": "REA — choosing a real estate professional",
+              "url": "https://www.rea.govt.nz/buyers-and-sellers/find-an-agent/"
+            }
+          ]
+        },
+        {
+          "heading": "Ask the same questions of each person",
+          "paragraphs": [
+            "Invite more than one professional to assess the property where practical. Ask what comparable sales underpin the appraisal, which sale method is recommended and what is included in the marketing proposal."
+          ],
+          "bullets": [
+            "Who will personally manage enquiries and viewings?",
+            "What are all commission, marketing and administration costs, with GST clear?",
+            "What happens if the marketing strategy needs to change?",
+            "How and when can the agency agreement end?"
+          ],
+          "refs": [
+            {
+              "label": "Settled — selling with an agent",
+              "url": "https://www.settled.govt.nz/selling-a-home/selling-your-property/selling-with-an-agent/"
+            },
+            {
+              "label": "REA — agency agreements",
+              "url": "https://www.rea.govt.nz/real-estate-professionals/industry-guidance-and-information/listing-a-property/agency-agreements/"
+            }
+          ]
+        },
+        {
+          "heading": "Read everything before signing",
+          "paragraphs": [
+            "An agency agreement creates legal rights and obligations. Obtain and read the REA consumer guide and ask a lawyer to review anything unclear. Written marketing costs, commission estimates and agency terms matter just as much as the appraisal."
+          ],
+          "bullets": [],
+          "refs": [
+            {
+              "label": "REA — approved consumer guides",
+              "url": "https://www.rea.govt.nz/buyers-and-sellers/read-our-guides/"
+            },
+            {
+              "label": "REA — agency agreements",
+              "url": "https://www.rea.govt.nz/real-estate-professionals/industry-guidance-and-information/listing-a-property/agency-agreements/"
+            }
+          ]
+        }
+      ],
+      "related": [
+        {
+          "href": "/sell/",
+          "text": "Selling a house"
+        },
+        {
+          "href": "/sell/property-appraisal/",
+          "text": "Appraisal questions"
+        },
+        {
+          "href": "/guides/selling-costs/",
+          "text": "Fees and selling costs"
+        }
+      ],
+      "cta": {
+        "title": "Talk through your questions",
+        "text": "Explore your objectives and the property's broad location before discussing a particular service.",
+        "url": "/contact/",
+        "label": "Contact Corrie"
+      },
+      "category": "guides",
+      "lastReviewed": "2026-11-17"
+    },
+    {
+      "path": "guides/selling-a-house",
+      "title": "How to Sell a House in New Zealand | Step-by-Step",
+      "description": "A concise NZ home-selling sequence: goals, appraisal, agency agreement, marketing, offers, legal review and settlement.",
+      "kicker": "Selling guide",
+      "h1": "Selling a house: the steps",
+      "intro": "The sequence varies by property and sale method, but a simple checklist helps sellers understand where professional advice and decisions are needed.",
+      "sections": [
+        {
+          "heading": "1. Plan before you list",
+          "paragraphs": [
+            "Clarify your timeframe, any buying plans, expected costs and the role of your lawyer or conveyancer. Check whether the property has any known issues or information that needs professional explanation.",
+            "A property-specific written appraisal and realistic marketing discussion help you understand options."
+          ],
+          "bullets": [],
+          "refs": [
+            {
+              "label": "REA — property appraisals",
+              "url": "https://www.rea.govt.nz/real-estate-professionals/industry-guidance-and-information/listing-a-property/appraisals/"
+            }
+          ]
+        },
+        {
+          "heading": "2. Compare proposals and authorise the work",
+          "paragraphs": [
+            "A licensed agency must explain its proposal, provide the required guide and written estimates, and enter an appropriate agency agreement before undertaking the agency work. Review commission, marketing spend, sale method, duration and cancellation rules."
+          ],
+          "bullets": [],
+          "refs": [
+            {
+              "label": "REA — agency agreements",
+              "url": "https://www.rea.govt.nz/real-estate-professionals/industry-guidance-and-information/listing-a-property/agency-agreements/"
+            },
+            {
+              "label": "REA — approved consumer guides",
+              "url": "https://www.rea.govt.nz/buyers-and-sellers/read-our-guides/"
+            }
+          ]
+        },
+        {
+          "heading": "3. Market, evaluate offers and reach settlement",
+          "paragraphs": [
+            "Marketing activity, buyer feedback, offers and conditions may require decisions and independent legal advice. Once an agreement is reached, finance, due diligence and other conditions must be resolved before settlement obligations are completed.",
+            "Ask how updates and offers will be communicated, who negotiates, and when your lawyer should become involved."
+          ],
+          "bullets": [],
+          "refs": [
+            {
+              "label": "Settled — independent buyer and seller guidance",
+              "url": "https://www.settled.govt.nz/"
+            },
+            {
+              "label": "Settled — selling with an agent",
+              "url": "https://www.settled.govt.nz/selling-a-home/selling-your-property/selling-with-an-agent/"
+            }
+          ]
+        }
+      ],
+      "related": [
+        {
+          "href": "/sell/",
+          "text": "Selling overview"
+        },
+        {
+          "href": "/sell/property-appraisal/",
+          "text": "Property appraisals"
+        },
+        {
+          "href": "/guides/selling-costs/",
+          "text": "Selling cost checklist"
+        }
+      ],
+      "cta": {
+        "title": "Thinking of selling soon?",
+        "text": "Tell us your location and timeframe for a preliminary conversation.",
+        "url": "/#property-enquiry-form",
+        "label": "Enquire about selling"
+      },
+      "category": "guides",
+      "lastReviewed": "2026-11-17"
+    },
+    {
+      "path": "guides/selling-costs",
+      "title": "Costs of Selling a House in NZ | Commission and Marketing",
+      "description": "Understand New Zealand house-selling costs and questions to ask about real estate commission, advertising, legal work and GST.",
+      "kicker": "Selling guide",
+      "h1": "What does it cost to sell a house?",
+      "intro": "The total cost of selling can be more than the agent's commission. Confirm an itemised estimate and seek appropriate advice before signing any agreement.",
+      "sections": [
+        {
+          "heading": "Common cost categories",
+          "paragraphs": [
+            "Potential costs include agency commission, marketing and photography, legal and conveyancing services, minor repairs or presentation, moving costs and any lending-related adjustments. Not every seller will incur every category."
+          ],
+          "bullets": [
+            "Commission: confirm the rate or tiered calculation and when payable.",
+            "Marketing: ask for a written schedule of included versus extra spend.",
+            "Legal and other professionals: request quotes and clarify scope.",
+            "GST: ask whether each estimate is inclusive or exclusive."
+          ],
+          "refs": [
+            {
+              "label": "Settled — selling with an agent",
+              "url": "https://www.settled.govt.nz/selling-a-home/selling-your-property/selling-with-an-agent/"
+            }
+          ]
+        },
+        {
+          "heading": "What the agency must explain",
+          "paragraphs": [
+            "Before an agency agreement is signed, a prospective seller should receive a written appraisal, a clear commission estimate and explanation of proposed advertising expenses. Understand how cancellation, sole agency and pre-existing introductions could affect the outcome.",
+            "Do not rely on online example percentages as a quotation of Corrie's charges. His own pricing and supervising agency terms have not been published here."
+          ],
+          "bullets": [],
+          "refs": [
+            {
+              "label": "REA — agency agreements",
+              "url": "https://www.rea.govt.nz/real-estate-professionals/industry-guidance-and-information/listing-a-property/agency-agreements/"
+            }
+          ]
+        },
+        {
+          "heading": "Build a realistic budget",
+          "paragraphs": [
+            "Use a range, not just one hoped-for sale price. Consider the effect of a slower sale, costs of getting a home ready, any conditional purchase and changes in interest rates. Independent legal and financial advice may be appropriate."
+          ],
+          "bullets": [],
+          "refs": [
+            {
+              "label": "Settled — independent buyer and seller guidance",
+              "url": "https://www.settled.govt.nz/"
+            }
+          ]
+        }
+      ],
+      "related": [
+        {
+          "href": "/sell/",
+          "text": "Selling overview"
+        },
+        {
+          "href": "/guides/choosing-a-real-estate-agent/",
+          "text": "Choosing an agent"
+        },
+        {
+          "href": "/sell/property-appraisal/",
+          "text": "Appraisal process"
+        }
+      ],
+      "cta": {
+        "title": "Discuss a selling plan",
+        "text": "Ask about the process; any specific fee proposal would require separate confirmation.",
+        "url": "/contact/",
+        "label": "Contact Corrie"
+      },
+      "category": "guides",
+      "lastReviewed": "2026-11-17"
+    },
+    {
+      "path": "guides/buying-a-home",
+      "title": "Buying a House in New Zealand | Early Steps and Checks",
+      "description": "What to prepare before buying a New Zealand home: finance, lawyer, inspection, title, LIM, contracts and overseas-buyer rules.",
+      "kicker": "Buyer guide",
+      "h1": "Buying a home: first steps",
+      "intro": "There is no one-size-fits-all property purchase checklist. These starting points help you ask the right questions of your lender, lawyer and property professionals.",
+      "sections": [
+        {
+          "heading": "Confirm finance and your professional team",
+          "paragraphs": [
+            "Ask your lender what borrowing amount and conditions could apply. Engage a lawyer or conveyancer before signing property documents, and discuss whether you need a building inspector, valuer or other specialist.",
+            "Allow for expenses other than the deposit, including legal fees, inspections, insurance and moving costs."
+          ],
+          "bullets": [],
+          "refs": [
+            {
+              "label": "Settled — independent buyer and seller guidance",
+              "url": "https://www.settled.govt.nz/"
+            }
+          ]
+        },
+        {
+          "heading": "Investigate the property and its legal position",
+          "paragraphs": [
+            "Consider the certificate of title, LIM, council records, building condition and hazards, insurance, any tenancy or body-corporate details, and the implications of clauses in the sale and purchase agreement. Which checks matter depends on the property.",
+            "Time limits in conditional offers can be significant. Confirm them with your lawyer."
+          ],
+          "bullets": [],
+          "refs": [
+            {
+              "label": "REA — approved consumer guides",
+              "url": "https://www.rea.govt.nz/buyers-and-sellers/read-our-guides/"
+            }
+          ]
+        },
+        {
+          "heading": "Understand buyer eligibility",
+          "paragraphs": [
+            "If you are an overseas person, do not assume you can purchase residential land in NZ. The rules depend on specific circumstances and sometimes require consent. Consult current LINZ guidance and an independent NZ lawyer."
+          ],
+          "bullets": [],
+          "refs": [
+            {
+              "label": "LINZ — overseas investment rules",
+              "url": "https://www.linz.govt.nz/guidance/overseas-investment/buying-residential-property-live"
+            }
+          ]
+        }
+      ],
+      "related": [
+        {
+          "href": "/buy/",
+          "text": "Buying overview"
+        },
+        {
+          "href": "/international/",
+          "text": "Overseas enquiries"
+        },
+        {
+          "href": "/guides/",
+          "text": "More property guides"
+        }
+      ],
+      "cta": {
+        "title": "Ask an initial property question",
+        "text": "We can help direct an enquiry appropriately once the situation is understood.",
+        "url": "/contact/",
+        "label": "Contact Corrie"
+      },
+      "category": "guides",
+      "lastReviewed": "2026-11-17"
+    },
+    {
+      "path": "guides/selling-from-overseas",
+      "title": "Selling New Zealand Property from Overseas | Initial Guide",
+      "description": "Living overseas and considering selling a NZ property? Practical starting questions on communications, agency agreements, legal help and remote coordination.",
+      "kicker": "Overseas owners",
+      "h1": "Selling New Zealand property while overseas",
+      "intro": "Being overseas does not mean you should skip the same careful checks that apply to a local sale. Early planning can reduce avoidable delays and confusion.",
+      "sections": [
+        {
+          "heading": "Establish authority and a communication plan",
+          "paragraphs": [
+            "Clarify who owns the property, who may authorise decisions and which lawyer or professional should handle the legal work. Expect an agent or lawyer to require appropriate identity and authority checks later in a secure process.",
+            "Choose a workable time zone overlap and confirm how documents will be reviewed and signed. Do not transmit passports or sensitive records through a general website enquiry."
+          ],
+          "bullets": [],
+          "refs": [
+            {
+              "label": "Settled — independent buyer and seller guidance",
+              "url": "https://www.settled.govt.nz/"
+            }
+          ]
+        },
+        {
+          "heading": "Understand the local selling process",
+          "paragraphs": [
+            "A licensed professional should discuss a current evidence-based appraisal, marketing arrangements and a written agency agreement. Local inspection, photography, property access and vendor disclosures need practical coordination.",
+            "Ask how often you will receive updates and which decisions require your explicit consent."
+          ],
+          "bullets": [],
+          "refs": [
+            {
+              "label": "REA — property appraisals",
+              "url": "https://www.rea.govt.nz/real-estate-professionals/industry-guidance-and-information/listing-a-property/appraisals/"
+            },
+            {
+              "label": "REA — agency agreements",
+              "url": "https://www.rea.govt.nz/real-estate-professionals/industry-guidance-and-information/listing-a-property/agency-agreements/"
+            }
+          ]
+        },
+        {
+          "heading": "Keep legal and tax questions with specialists",
+          "paragraphs": [
+            "Ownership structures, residency, tax position and property history can have implications that a general website cannot decide. Obtain your own NZ legal and tax advice where needed. The existence of this guide does not mean a nationwide or cross-border service engagement has been accepted."
+          ],
+          "bullets": [],
+          "refs": [
+            {
+              "label": "Settled — independent buyer and seller guidance",
+              "url": "https://www.settled.govt.nz/"
+            }
+          ]
+        }
+      ],
+      "related": [
+        {
+          "href": "/international/",
+          "text": "International property enquiries"
+        },
+        {
+          "href": "/sell/",
+          "text": "Selling overview"
+        },
+        {
+          "href": "/guides/selling-costs/",
+          "text": "Selling costs"
+        }
+      ],
+      "cta": {
+        "title": "Enquire from overseas",
+        "text": "Tell us the NZ region, whether you own the property, your preferred time zone and your general question. Travel or representation must be confirmed separately.",
+        "url": "/#property-enquiry-form",
+        "label": "Make a preliminary enquiry"
+      },
+      "category": "guides",
+      "lastReviewed": "2026-11-17"
+    },
+    {
+      "path": "privacy",
+      "title": "Privacy and Website Enquiries | Piripi & Sons Real Estate",
+      "description": "How website enquiries and analytics information may be used, plus how to ask about access, correction or deletion.",
+      "kicker": "Your information",
+      "h1": "Privacy and website enquiries",
+      "intro": "We aim to make it clear what happens when you use this website or contact us. This is a plain-language notice for the current preliminary website and will be reviewed as services develop.",
+      "sections": [
+        {
+          "heading": "Information you choose to provide",
+          "paragraphs": [
+            "An enquiry may include your name, email address, phone number, general reason for contacting us and the message you enter. Provide only the information necessary for an initial conversation. Please do not submit passwords, passport information, bank records, visa documents or other sensitive files."
+          ],
+          "bullets": [],
+          "refs": []
+        },
+        {
+          "heading": "How the current enquiry system works",
+          "paragraphs": [
+            "The website uses Cloudflare infrastructure and an email-delivery service (Brevo) for website enquiries when direct sending is configured. The enquiry is delivered to the configured recipient inbox for follow-up. If direct delivery is not configured, the site may invite you to send an email using your own mail application.",
+            "The website also has a Google tag used for website analytics. We do not intentionally send the contents of enquiry forms, telephone numbers, email addresses or property addresses as analytics event parameters."
+          ],
+          "bullets": [],
+          "refs": []
+        },
+        {
+          "heading": "International service providers, access and enquiries",
+          "paragraphs": [
+            "Some service providers may process information outside New Zealand. Enquiry details should be accessed only by people responsible for handling them. We review access and retention arrangements as the service develops.",
+            "To ask how your information is used or request access or correction, use the contact page. Any applicable legal rights and obligations take precedence over this summary."
+          ],
+          "bullets": [],
+          "refs": []
+        }
+      ],
+      "related": [
+        {
+          "href": "/contact/",
+          "text": "Contact details"
+        },
+        {
+          "href": "/",
+          "text": "Home"
+        }
+      ],
+      "cta": {
+        "title": "Privacy question?",
+        "text": "Contact us with a general description of your request, rather than sharing sensitive information through a public message.",
+        "url": "/contact/",
+        "label": "Contact us"
+      },
+      "category": "privacy",
+      "lastReviewed": "2026-11-17"
+    }
+  ]
+}
