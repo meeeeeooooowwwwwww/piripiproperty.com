@@ -64,6 +64,10 @@ embed, delete the old card and paste a fresh query URL, for example
 To refresh a cached Facebook link preview, use https://developers.facebook.com/tools/debug/
 and choose **Scrape Again** for https://piripiproperty.com/ .
 
+## Corrie Piripi professional profile
+
+`/about/corrie-piripi/` is generated from public source-backed professional history. The 2016 Real Estate Business profile mentions his role as chief executive of Just Property Management, the 2022 Coronis feature discusses his Australian franchise work, and LinkedIn lists professional development and community volunteer activities. These are *historical* and do not establish current NZ licence or agency authority. The current LinkedIn 200×200 photo URL is not a reliable, rights-cleared high-resolution portrait. Do not substitute a synthetic likeness or externally hotlink the expiring social image. Keep professional photograph addition pending a usable original and Corrie's consent. Expand only when identity, qualifications and personal details are verified.
+
 ## Initial public pages
 
 - `/`: branded home with uncropped team photograph and right-side enquiry form on desktop; the form is below the photograph on mobile. The form POSTs to `/api/enquiry`; requires the Cloudflare Pages secret below for live direct delivery.
