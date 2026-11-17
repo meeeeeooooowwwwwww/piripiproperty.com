@@ -79,6 +79,9 @@ jobs:
           test -s public/sitemap.xml
           test -s public/international/index.html
           test -s public/privacy/index.html
+          test -s public/about/corrie-piripi/index.html
+          grep -Fq 'https://piripiproperty.com/about/corrie-piripi/' public/sitemap.xml
+          grep -Fq 'Real Estate Business (Jan 2016)' public/about/corrie-piripi/index.html
           test -s public/sell/index.html
           test -s public/sell/property-appraisal/index.html
           test -s public/guides/choosing-a-real-estate-agent/index.html

@@ -328,53 +328,71 @@
     {
       "path": "about",
       "title": "About Piripi & Sons Real Estate | Corrie Piripi",
-      "description": "Learn about the Piripi & Sons Real Estate brand and contact Christchurch-based Corrie Piripi. Verified credentials and agency details will be added once confirmed.",
+      "description": "Meet Corrie Piripi and explore his Australian property-management, real estate and community leadership background, with sources and an enquiry route.",
       "kicker": "About",
       "h1": "Piripi & Sons Real Estate",
-      "intro": "Piripi & Sons Real Estate is a developing property-facing brand and website centred on professional communication, helpful information and conversations with Corrie Piripi.",
+      "intro": "Corrie Piripi's professional experience has included real estate sales, property management, leadership and community-focused work in Australia. Here is a source-backed introduction, with current NZ credentials to be confirmed.",
       "sections": [
         {
-          "heading": "A clear starting point",
+          "heading": "A background in property and people",
           "paragraphs": [
-            "The website's focus is to make early property conversations straightforward: understanding whether someone is selling, buying, exploring a property appraisal or seeking information about New Zealand property from overseas.",
-            "This is a preliminary public presence. We will publish additional professional credentials, agency details and experience only when they have been independently verified and approved."
+            "Corrie Piripi has worked across Australian real estate sales, property management and business leadership. Public industry reporting provides a view of his experience before his current Christchurch-based property work.",
+            "His professional background also includes work with organisations supporting young people and families. The combination offers a more rounded introduction than a conventional property-sales biography."
           ],
           "bullets": [],
           "refs": [
             {
-              "label": "REA — choosing a real estate professional",
-              "url": "https://www.rea.govt.nz/buyers-and-sellers/find-an-agent/"
-            }
-          ]
-        },
-        {
-          "heading": "People and professional responsibilities",
-          "paragraphs": [
-            "In New Zealand, licence classes and supervision arrangements matter. Prospective clients should verify the current licence class and licensed agency details of the professional they work with, and check the requirements of any agency agreement before authorising property marketing.",
-            "The REA maintains the public register and guidance for buyers and sellers."
-          ],
-          "bullets": [],
-          "refs": [
-            {
-              "label": "REA — choosing a real estate professional",
-              "url": "https://www.rea.govt.nz/buyers-and-sellers/find-an-agent/"
+              "label": "Real Estate Business, 2016",
+              "url": "https://www.realestatebusiness.com.au/industry/15165-agency-uses-rent-roll-to-aid-bushfire-victims"
             },
             {
-              "label": "REA — agency agreements",
-              "url": "https://www.rea.govt.nz/real-estate-professionals/industry-guidance-and-information/listing-a-property/agency-agreements/"
+              "label": "Real Estate Business, 2022",
+              "url": "https://www.realestatebusiness.com.au/sales/23478-our-sales-franchises-are-gaining-multiple-income-streams-and-building-a-salable-asset-are-you"
             }
           ]
         },
         {
-          "heading": "What to expect from an initial enquiry",
+          "heading": "Professional credibility, carefully sourced",
           "paragraphs": [
-            "Share the broad area, whether you are interested in selling or buying, and a suitable contact method. You do not need to share financial statements, identity documents or detailed property records to begin a conversation."
+            "An Australian industry report in January 2016 identified Corrie as chief executive of Just Property Management in Bunbury, Western Australia. A later Coronis feature reported that he began a franchise business with the group in 2021. These are historical roles, not claims about his current employing agency.",
+            "For individual qualifications, current New Zealand licensing and supervising-agency information, independent verification and appropriate approval remain important. We will publish confirmed specifics when available."
           ],
           "bullets": [],
-          "refs": []
+          "refs": [
+            {
+              "label": "2016 industry report",
+              "url": "https://www.realestatebusiness.com.au/industry/15165-agency-uses-rent-roll-to-aid-bushfire-victims"
+            },
+            {
+              "label": "2022 franchise interview",
+              "url": "https://www.realestatebusiness.com.au/sales/23478-our-sales-franchises-are-gaining-multiple-income-streams-and-building-a-salable-asset-are-you"
+            },
+            {
+              "label": "REA licence register",
+              "url": "https://www.rea.govt.nz/buyers-and-sellers/find-an-agent/"
+            }
+          ]
+        },
+        {
+          "heading": "Getting to know Corrie",
+          "paragraphs": [
+            "A good working relationship begins with clear communication. If you're considering selling, an appraisal or an early property conversation, you can start by explaining your goals, location and timeframe.",
+            "Read Corrie's professional background to learn about his property-management and leadership experience, then contact him with any questions about his current services."
+          ],
+          "bullets": [],
+          "refs": [
+            {
+              "label": "Professional background",
+              "url": "https://au.linkedin.com/in/corrie-piripi-84a23124"
+            }
+          ]
         }
       ],
       "related": [
+        {
+          "href": "/about/corrie-piripi/",
+          "text": "Corrie's professional profile"
+        },
         {
           "href": "/contact/",
           "text": "Contact Corrie"
@@ -926,6 +944,111 @@
       },
       "category": "privacy",
       "lastReviewed": "2026-11-17"
+    },
+    {
+      "path": "about/corrie-piripi",
+      "title": "Corrie Piripi | Real Estate, Property Leadership & Community",
+      "description": "Explore Corrie Piripi's experience in Australian real estate, property management, business leadership and community service, with independent references.",
+      "kicker": "Professional background",
+      "h1": "Corrie Piripi",
+      "intro": "Real estate, property-management leadership and a longstanding interest in people and community. Corrie's professional background spans several roles in Australia and now informs his property conversations in Christchurch.",
+      "category": "about",
+      "lastReviewed": "2026-11-17",
+      "sections": [
+        {
+          "heading": "Experience in Australian property and real estate",
+          "paragraphs": [
+            "In January 2016, Australian industry publication Real Estate Business identified Corrie as the chief executive of Just Property Management in Bunbury, Western Australia. Its report described how the business worked with landlords and tenants to assist people affected by the Yarloop bushfires.",
+            "A May 2022 feature by Coronis reported that Corrie had started his own franchise business with the group in 2021. In that interview he discussed the relationship between sales, property management, running a business and having a workable balance with family life.",
+            "Those reports provide independently published examples of earlier experience. They do not establish his current New Zealand licensing class, supervising agency or active business arrangements."
+          ],
+          "bullets": [],
+          "refs": [
+            {
+              "label": "Real Estate Business (Jan 2016)",
+              "url": "https://www.realestatebusiness.com.au/industry/15165-agency-uses-rent-roll-to-aid-bushfire-victims"
+            },
+            {
+              "label": "Real Estate Business (May 2022)",
+              "url": "https://www.realestatebusiness.com.au/sales/23478-our-sales-franchises-are-gaining-multiple-income-streams-and-building-a-salable-asset-are-you"
+            }
+          ]
+        },
+        {
+          "heading": "Professional development and property management",
+          "paragraphs": [
+            "Corrie's public LinkedIn profile lists study and credentials related to property services and earlier Australian real estate registration, alongside experience in property-management and franchise-development work. Public Western Australian real estate records also identify him as a salesperson in earlier Coronis transactions.",
+            "Historical qualifications and licences should not be mistaken for a currently active New Zealand licence. The exact NZ class and agency details should always be checked on the Real Estate Authority's public register."
+          ],
+          "bullets": [],
+          "refs": [
+            {
+              "label": "LinkedIn professional history",
+              "url": "https://au.linkedin.com/in/corrie-piripi-84a23124"
+            },
+            {
+              "label": "REA public licence register",
+              "url": "https://www.rea.govt.nz/buyers-and-sellers/find-an-agent/"
+            },
+            {
+              "label": "REIWA historic record",
+              "url": "https://reiwa.com.au/99-manning-road-bentley-4768395/"
+            }
+          ]
+        },
+        {
+          "heading": "Community work and a people-first perspective",
+          "paragraphs": [
+            "Alongside property work, Corrie's public professional profile describes voluntary work mentoring young people, contributing to cultural and community initiatives, and earlier involvement with the Bunbury Youth Consortium.",
+            "His background reflects an interest in people and long-term relationships as well as transactions. Personal stories and more detailed community achievements will be added only with his approval."
+          ],
+          "bullets": [],
+          "refs": [
+            {
+              "label": "Corrie's public LinkedIn profile",
+              "url": "https://au.linkedin.com/in/corrie-piripi-84a23124"
+            }
+          ]
+        },
+        {
+          "heading": "A new chapter in Christchurch",
+          "paragraphs": [
+            "Corrie is now based in Christchurch. The purpose of Piripi & Sons Real Estate's website is to provide clear information about New Zealand property questions and a direct way to make an enquiry.",
+            "Current service arrangements, appraisals, nationwide representation and any international-investor work need to be confirmed for each applicable situation. If you would like to talk, start with the general property location, your purpose and the best way to contact you."
+          ],
+          "bullets": [],
+          "refs": [
+            {
+              "label": "REA: check an agent or salesperson",
+              "url": "https://www.rea.govt.nz/buyers-and-sellers/find-an-agent/"
+            }
+          ]
+        }
+      ],
+      "related": [
+        {
+          "href": "/about/",
+          "text": "About Piripi & Sons"
+        },
+        {
+          "href": "/sell/",
+          "text": "Selling a home"
+        },
+        {
+          "href": "/international/",
+          "text": "International enquiries"
+        },
+        {
+          "href": "/contact/",
+          "text": "Contact Corrie"
+        }
+      ],
+      "cta": {
+        "title": "Start a property conversation",
+        "text": "Contact Corrie with your general property location and what you would like to discuss.",
+        "url": "/contact/",
+        "label": "Contact Corrie"
+      }
     }
   ]
 }
