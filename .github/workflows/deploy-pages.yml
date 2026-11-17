@@ -80,6 +80,13 @@ jobs:
           test -s public/international/index.html
           test -s public/privacy/index.html
           test -s public/about/corrie-piripi/index.html
+          test -s public/assets/corrie-piripi-professional.webp
+          grep -Fq 'src="/assets/corrie-piripi-professional.webp"' public/about/corrie-piripi/index.html
+          grep -Fq 'href="/about/corrie-piripi/"' public/index.html
+          ! grep -Fq '>Menu</button>' public/index.html
+          ! grep -Fq '>Menu</button>' public/contact/index.html
+          ! grep -Fq '>Menu</button>' public/sitemap/index.html
+          ! grep -Fq '>Menu</button>' public/international/index.html
           grep -Fq 'https://piripiproperty.com/about/corrie-piripi/' public/sitemap.xml
           grep -Fq 'Real Estate Business (Jan 2016)' public/about/corrie-piripi/index.html
           test -s public/sell/index.html
