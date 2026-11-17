@@ -345,3 +345,18 @@ Discuss with Corrie:
 - Future analytics: aggregate traffic and conversions for the international hub, without personal data in GA4. Do not count enquiries as accepted clients.
 
 **Release gate:** Phase A is approved as a restrained informational/SEO seed. Promotion or claims of an established premium or national/investor service remain pending Corrie's consultation, licence and agency verification.
+
+## 15. Corrie Piripi professional profile research — 17 Nov 2026
+
+**New user direction:** Create a professional, slightly personal biographical portfolio based on his linked public profile, not a gallery of property listings. A generated SEO page `/about/corrie-piripi/` now takes historical property leadership and community service as its evidence-led themes. Subject to final client approval, small italic `*` footnotes lead to each public source.
+
+**Independent background evidence:**
+- Real Estate Business (25 Jan 2016): names Corrie Piripi chief executive of Just Property Management in Bunbury and discusses assistance to Yarloop bushfire-affected families. https://www.realestatebusiness.com.au/industry/15165-agency-uses-rent-roll-to-aid-bushfire-victims
+- Real Estate Business / Coronis (17 May 2022): reports he started his own Coronis franchise business in 2021 and quotes him on real-estate sales, investment properties and property-management relationships. This is an attributed vendor-contributed article, not independent verification of all claims. https://www.realestatebusiness.com.au/sales/23478-our-sales-franchises-are-gaining-multiple-income-streams-and-building-a-salable-asset-are-you
+- REIWA historical records associate him with Western Australian property sales for Coronis; do not reproduce old property listings in the new branded website without permission. https://reiwa.com.au/99-manning-road-bentley-4768395/
+- His public LinkedIn self-reports a 2017 Australian Diploma in Property Services, previous Australian real-estate registration, youth-work education, cultural/community mentoring and leadership roles. These must be reconfirmed before asserting active licensing, current roles or achievements. https://au.linkedin.com/in/corrie-piripi-84a23124
+- NZ REA public register and supervising agency confirmation remain required: https://www.rea.govt.nz/buyers-and-sellers/find-an-agent/
+
+**Portrait status:** The requested 200×200 LinkedIn thumbnail URL could not be securely downloaded as a reliable source. An AI studio-style concept is not proof of likeness and must not be presented as a real portrait. Obtain a local original photograph or confirmed permission and appropriate photo-quality input before deploying an edited image; use professional lighting and neutral charcoal/gold background consistent with the brand without changing facial identity.
+
+**Client checklist:** Updated the internal Google Drive question document with additional biography and photo-approval checks. Historical public evidence does not substitute for Corrie's approval to present personal family, cultural or community background.
