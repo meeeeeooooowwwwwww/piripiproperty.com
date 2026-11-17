@@ -67,6 +67,19 @@ async def run_browser(base_url: str) -> None:
                         continue
                     await page.locator("main#main-content").wait_for(timeout=5000)
                     await page.locator(".site-header__brand").wait_for(timeout=5000)
+                    if route == "/":
+                        # The small home trust portrait is below the fold and
+                        # lazy-loaded. Trigger and await it before screenshotting.
+                        lazy_portrait = page.locator(".home-proof__portrait img")
+                        await lazy_portrait.scroll_into_view_if_needed(timeout=5000)
+                        await page.wait_for_function(
+                            "() => { const i = document.querySelector('.home-proof__portrait img'); return !!(i && i.complete && i.naturalWidth > 0); }",
+                            timeout=8000,
+                        )
+                        await page.evaluate("window.scrollTo(0, 0)")
+                    if route in ("/about/", "/about/corrie-piripi/"):
+                        if await page.locator('link[href*="family=Pinyon+Script"]').count() != 1:
+                            ERRORS.append(f"{route} {viewport_name}: contact signature font link missing")
                     # DOM measurements: real computed CSS, not string-based assumptions.
                     data = await page.evaluate("""() => {
                       const img = document.querySelector('.home-proof__portrait img');
