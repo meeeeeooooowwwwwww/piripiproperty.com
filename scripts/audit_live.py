@@ -115,6 +115,16 @@ def main():
             print("LIVE_ASSET_PASS", route, status)
         except Exception as exc:
             ERRORS.append(f"{route}: {exc}")
+    # pages.dev can duplicate indexable content; never let its successful 200 be indexed.
+    try:
+        preview_status, preview_headers, preview_body = fetch("https://piripiproperty.pages.dev/")
+        robots = preview_headers.get("X-Robots-Tag", "").lower()
+        if preview_status == 200 and "noindex" not in robots:
+            ERRORS.append("pages.dev duplicate is indexable: X-Robots-Tag noindex missing")
+        else:
+            print("LIVE_PAGES_DEV_NOINDEX=" + ("PASS" if "noindex" in robots else "UNVERIFIED"))
+    except Exception as exc:
+        print("LIVE_PAGES_DEV_NOINDEX=UNVERIFIED", type(exc).__name__)
     # Note: intentionally do NOT mark a missing Brevo key as a site deploy failure.
     try:
         status, headers, data = fetch(ORIGIN + "/api/enquiry")
