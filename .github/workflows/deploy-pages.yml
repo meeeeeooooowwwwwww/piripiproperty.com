@@ -266,6 +266,14 @@ jobs:
                   raise SystemExit('PIRIPI_SMOKE_FAIL=' + path + ' ' + last)
           PY
 
+      - name: Audit all production URLs, canonical SEO and security headers
+        id: live_audit
+        if: github.event_name == 'push' && steps.deploy.outcome == 'success' && steps.smoke.outcome == 'success'
+        shell: bash
+        run: |
+          set -euo pipefail
+          python scripts/audit_live.py
+
       - name: Check deployed enquiry endpoint readiness (read-only)
         if: github.event_name == 'push' && steps.auth.outputs.available == 'true'
         shell: bash
@@ -317,19 +325,21 @@ jobs:
           GH_TOKEN: ${{ github.token }}
           DEPLOY_RESULT: ${{ steps.deploy.outcome }}
           SMOKE_RESULT: ${{ steps.smoke.outcome }}
+          LIVE_AUDIT_RESULT: ${{ steps.live_audit.outcome }}
           CF_AUTH: ${{ steps.auth.outputs.available }}
         run: |
           python - <<'PY'
           import json, os, urllib.request
           good = (os.environ.get('CF_AUTH') == 'true' and
                   os.environ.get('DEPLOY_RESULT') == 'success' and
-                  os.environ.get('SMOKE_RESULT') == 'success')
+                  os.environ.get('SMOKE_RESULT') == 'success' and
+                  os.environ.get('LIVE_AUDIT_RESULT') == 'success')
           repo = os.environ['GITHUB_REPOSITORY']
           sha = os.environ['GITHUB_SHA']
           payload = {
               'state': 'success' if good else 'failure',
               'context': 'piripiproperty/cloudflare-production',
-              'description': 'Cloudflare deployment and live SEO/portrait audit passed' if good else 'Deployment or live smoke test not verified',
+              'description': 'Cloudflare full-site SEO, headers and responsive deployment passed' if good else 'Deployment or live smoke test not verified',
               'target_url': 'https://github.com/' + repo + '/actions/runs/' + os.environ['GITHUB_RUN_ID'],
           }
           req = urllib.request.Request(
